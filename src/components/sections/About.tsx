@@ -34,10 +34,9 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg leading-relaxed text-text-secondary">
-              300 Consulting is a one-person firm by design. When you work with
-              me, you get a Microsoft Certified Azure Solutions Architect with
-              direct, senior-level attention on every decision — from initial
-              discovery through production deployment.
+              300 Consulting is a one-person firm. When you work with me, you
+              work directly with a Microsoft Certified Azure Solutions Architect
+              — from the first conversation to production deployment.
             </p>
             <p className="text-lg leading-relaxed text-text-secondary">
               I&apos;ve delivered for Fortune 100 companies and early-stage startups
