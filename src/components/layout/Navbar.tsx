@@ -1,0 +1,105 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { NAV_LINKS, SITE } from "@/lib/constants";
+import { Menu, X } from "lucide-react";
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "glass border-b border-border-subtle"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <a
+          href="#"
+          className="flex items-center gap-[1px] font-heading text-xl font-bold tracking-tight text-text-primary"
+          data-cursor-hover
+        >
+<span className="text-accent">300</span>
+          <span className="font-light mx-[5px]">CONSULTING</span>
+        </a>
+
+        {/* Desktop nav */}
+        <div className="hidden items-center gap-8 md:flex">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="relative font-heading text-sm tracking-wide text-text-secondary transition-colors duration-200 hover:text-text-primary"
+              data-cursor-hover
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href={`mailto:${SITE.email}`}
+            className="rounded-full border border-accent/30 bg-accent/10 px-5 py-2 font-heading text-sm text-accent transition-all duration-300 hover:border-accent hover:bg-accent/20"
+            data-cursor-hover
+          >
+            Get in touch
+          </a>
+        </div>
+
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden text-text-primary"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+          data-cursor-hover
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="glass border-b border-border-subtle md:hidden"
+          >
+            <div className="flex flex-col gap-4 px-6 py-6">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="font-heading text-lg text-text-secondary transition-colors hover:text-text-primary"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href={`mailto:${SITE.email}`}
+                className="mt-2 inline-block rounded-full border border-accent/30 bg-accent/10 px-5 py-2 text-center font-heading text-sm text-accent"
+                onClick={() => setMobileOpen(false)}
+              >
+                Get in touch
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
+  );
+}
