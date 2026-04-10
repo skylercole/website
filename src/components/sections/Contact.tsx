@@ -37,14 +37,13 @@ export default function Contact() {
             Get in touch
           </span>
           <h2 className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-6xl">
-            Let&apos;s build something
+            Have a project that needs
             <br />
-            <span className="text-accent">that lasts.</span>
+            <span className="text-accent">the right foundation?</span>
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-lg text-text-secondary">
-            Have a project in mind? I&apos;m always open to discussing new
-            opportunities in solution architecture, cloud engineering, and
-            distributed systems.
+            Working on something that needs solid architecture or cloud
+            expertise? Let&apos;s talk.
           </p>
         </ScrollReveal>
 
@@ -120,7 +119,7 @@ export default function Contact() {
             <MapPin className="h-4 w-4" />
             <span>{SITE.location}</span>
             <span className="text-border-subtle">·</span>
-            <span>Remote-first. Timezone-flexible.</span>
+            <span>Works remotely. Available across timezones.</span>
           </div>
         </motion.div>
       </div>

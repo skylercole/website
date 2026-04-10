@@ -17,10 +17,10 @@ export default function About() {
             variants={slideInLeft}
           >
             <p className="font-heading text-3xl font-bold leading-snug tracking-tight md:text-4xl lg:text-5xl">
-              You&apos;re not hiring a developer.
+              Not just a developer.
               <br />
               <span className="text-accent">
-                You&apos;re hiring 24 years of knowing what breaks at scale.
+                24 years of knowing what breaks at scale.
               </span>
             </p>
           </motion.div>
@@ -39,8 +39,8 @@ export default function About() {
               — from the first conversation to production deployment.
             </p>
             <p className="text-lg leading-relaxed text-text-secondary">
-              I&apos;ve delivered for Fortune 100 companies and early-stage startups
-              alike. The scope changes. The standard doesn&apos;t.
+              I&apos;ve worked with Fortune 100 companies and early-stage startups.
+              The context varies — the quality of the work doesn&apos;t.
             </p>
 
             <p className="text-lg leading-relaxed text-text-secondary">
@@ -63,7 +63,7 @@ export default function About() {
               >
                 Techie Solutions
               </a>
-              . One point of accountability. Full team depth.
+              . One point of contact, with the depth of a full team when needed.
             </p>
 
             {/* Certification badge */}

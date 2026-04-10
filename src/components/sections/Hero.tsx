@@ -35,8 +35,7 @@ export default function Hero() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="mx-auto mt-6 max-w-2xl text-lg text-text-secondary md:text-xl"
         >
-          Solution Architecture, Development, and Cloud Engineering for companies that need it
-          done right the first time.
+          Solution Architecture, Development, and Cloud Engineering for companies that take long-term quality seriously.
         </motion.p>
 
         {/* CTA */}

@@ -20,20 +20,20 @@ export const METRICS = [
 export const CAPABILITIES = [
   {
     title: "Full-Stack Development",
-    description: "End-to-end delivery. No handoffs. No miscommunication.",
+    description: "End-to-end delivery, without handoffs or communication gaps.",
     icon: "Layers",
     size: "medium" as const,
   },
   {
     title: "Cloud Architecture",
     description:
-      "Migrate, modernize, and scale without the 3 AM wake-up calls.",
+      "Migrate, modernize, and scale reliably.",
     icon: "Cloud",
     size: "large" as const,
   },
   {
     title: "Distributed Systems",
-    description: "50+ microservices created, migrated, or scaled. Zero-downtime. Zero drama.",
+    description: "50+ microservices created, migrated, or scaled. Zero downtime.",
     icon: "Network",
     size: "small" as const,
   },
@@ -46,7 +46,7 @@ export const CAPABILITIES = [
   },
   {
     title: "AI / ML Integration",
-    description: "Practical ML that ships.",
+    description: "Practical ML that goes into production.",
     icon: "Brain",
     size: "medium" as const,
   },
@@ -214,7 +214,7 @@ export const PROCESS_STEPS = [
     number: "/02",
     title: "Architecture",
     description:
-      "A blueprint you can challenge, understand, and bet on.",
+      "A blueprint you can challenge, understand, and stand behind.",
   },
   {
     number: "/03",
