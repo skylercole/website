@@ -33,27 +33,27 @@ export const CAPABILITIES = [
   },
   {
     title: "Distributed Systems",
-    description: "50+ microservices migrated. Zero-downtime. Zero drama.",
+    description: "50+ microservices created, migrated, or scaled. Zero-downtime. Zero drama.",
     icon: "Network",
     size: "small" as const,
   },
   {
     title: "Solution Design",
     description:
-      "From whiteboard to production-grade architecture in weeks, not quarters.",
+      "From whiteboard to production-grade architecture quickly and efficiently.",
     icon: "PenTool",
     size: "small" as const,
   },
   {
     title: "AI / ML Integration",
-    description: "Practical ML that ships, not PowerPoint that doesn't.",
+    description: "Practical ML that ships.",
     icon: "Brain",
     size: "medium" as const,
   },
   {
     title: "DevOps & Infrastructure",
     description:
-      "Terraform, Kubernetes, CI/CD — the plumbing that makes everything else possible.",
+      "CI/CD, Kubernetes, Terraform, and more — the plumbing that makes everything else possible.",
     icon: "Container",
     size: "small" as const,
   },
@@ -67,7 +67,7 @@ export const CAPABILITIES = [
   {
     title: "Legacy Modernization",
     description:
-      "Your monolith deserves a respectful decomposition, not a rewrite.",
+      "10+ projects modernized and migrated to modern architectures.",
     icon: "RefreshCw",
     size: "large" as const,
   },
@@ -76,7 +76,7 @@ export const CAPABILITIES = [
 export const TECH_STACK = [
   {
     category: "Languages",
-    items: ["C#", "Python", "TypeScript", "JavaScript", "C++", "Kotlin"],
+    items: ["C#", "Python", "TypeScript", "JavaScript", "C++"],
   },
   {
     category: "Cloud",
@@ -85,7 +85,7 @@ export const TECH_STACK = [
   },
   {
     category: "Frontend",
-    items: ["React", "Vue", "Angular", "Blazor", "Flutter", "Avalonia"],
+    items: ["React", "Vue", "Angular", "Blazor", "Flutter", "Avalonia", "Next.js"],
   },
   {
     category: "Data",
@@ -97,7 +97,7 @@ export const TECH_STACK = [
   },
   {
     category: "AI / ML",
-    items: ["PyTorch", "TensorFlow", "Azure ML", "RAG"],
+    items: ["PyTorch", "TensorFlow", "Azure ML", "RAG", "ML.NET", "Scikit-learn", "Face-recognition", "Ollama"],
   },
   {
     category: "Messaging",
@@ -122,7 +122,7 @@ export const CASE_STUDIES = [
     description:
       "Contributed to resilient, distributed applications used across large-scale enterprise systems. Migrated 50+ microservices from AWS to Azure and Kubernetes.",
     tech: [".NET", "Azure", "AWS", "Kubernetes", "Kafka", "Terraform"],
-    gradient: "from-blue-900/40 to-blue-950/20",
+    gradient: "from-[#10b98118] via-[#0c0c0c00] to-[#10b98108]",
   },
   {
     client: "Airpro",
@@ -131,7 +131,7 @@ export const CASE_STUDIES = [
     description:
       "Enabled near real-time analytics across operations to manage large-scale data flows and support data-driven decision-making across the organization.",
     tech: [".NET", "Azure", "Databricks", "Kubernetes", "Terraform"],
-    gradient: "from-violet-900/40 to-violet-950/20",
+    gradient: "from-[#1e1e2e] via-[#0c0c0c00] to-[#10b98108]",
   },
   {
     client: "Rolls-Royce Marine",
@@ -140,7 +140,7 @@ export const CASE_STUDIES = [
     description:
       "Led development of an interfacing layer for Intelligent Asset Management and Remote/Autonomous operations in shipping, integrating sensor data, AI object detection, and video streaming.",
     tech: ["C++", "Unity", "gRPC", "LiDAR", "AI"],
-    gradient: "from-amber-900/40 to-amber-950/20",
+    gradient: "from-[#0d2318] via-[#0c0c0c00] to-[#161616]",
   },
   {
     client: "Rocla / Mitsubishi",
@@ -149,7 +149,7 @@ export const CASE_STUDIES = [
     description:
       "Built an IoT dashboard for AGVs, enabling real-time monitoring, predictive maintenance, and maintenance-related sales lead generation.",
     tech: [".NET", "Azure", "Azure ML", "CosmosDB", "IoT"],
-    gradient: "from-rose-900/40 to-rose-950/20",
+    gradient: "from-[#1a1a2a] via-[#0c0c0c00] to-[#0d2318]",
   },
   {
     client: "Stora Enso",
@@ -158,7 +158,7 @@ export const CASE_STUDIES = [
     description:
       "Developed software for tracking the full lifecycle of wood-based buildings, from production to IoT-enabled performance monitoring. Built IoT solution covering consumer goods from production and logistics to consumption and recycling.",
     tech: ["React", ".NET", "IoT", "Azure"],
-    gradient: "from-teal-900/40 to-teal-950/20",
+    gradient: "from-[#10b98112] via-[#161616] to-[#1e1e2e]",
   },
   {
     client: "Palkkaus.fi",
@@ -167,7 +167,7 @@ export const CASE_STUDIES = [
     description:
       "Developed API integration systems for accounting and payments, enabling seamless financial data flows across the platform.",
     tech: [".NET", "Angular"],
-    gradient: "from-cyan-900/40 to-cyan-950/20",
+    gradient: "from-[#161616] via-[#0d2318] to-[#0c0c0c00]",
   },
   {
     client: "Kone",
@@ -176,7 +176,7 @@ export const CASE_STUDIES = [
     description:
       "Built a domain-specific HTML VR browser for Microsoft HoloLens, enabling immersive visualization for elevator and building solutions.",
     tech: [".NET", "Unity"],
-    gradient: "from-sky-900/40 to-sky-950/20",
+    gradient: "from-[#1e1e2e] via-[#0c0c0c00] to-[#0d1f15]",
   },
   {
     client: "ABB",
@@ -185,7 +185,7 @@ export const CASE_STUDIES = [
     description:
       "Contributed to the development of the ABB Drive Composer tool, a professional PC tool for commissioning and maintaining ABB drives.",
     tech: [".NET"],
-    gradient: "from-orange-900/40 to-orange-950/20",
+    gradient: "from-[#0d2318] via-[#161616] to-[#1a1a2a]",
   },
 ];
 

@@ -37,7 +37,7 @@ export default function Capabilities() {
               Capabilities
             </span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight md:text-5xl">
-              What I deliver
+              What we can deliver
             </h2>
           </div>
         </ScrollReveal>

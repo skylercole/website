@@ -46,7 +46,7 @@ export default function Hero() {
           transition={{ delay: 1.1, duration: 0.6 }}
           className="mt-10"
         >
-          <MagneticButton href="#case-studies">View my work</MagneticButton>
+          <MagneticButton href="#case-studies">Explore case studies</MagneticButton>
         </motion.div>
       </div>
 
