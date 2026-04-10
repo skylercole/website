@@ -45,9 +45,8 @@ export default function About() {
             </p>
 
             <p className="text-lg leading-relaxed text-text-secondary">
-              And when a project calls for more horsepower, I don&apos;t go it alone.
-              I work within a trusted network of senior consultants —
-              including{" "}
+              When a project demands broader reach, I draw on a vetted network
+              of senior specialists — including{" "}
               <a
                 href="http://eladaus.com/"
                 target="_blank"
@@ -64,8 +63,8 @@ export default function About() {
                 className="text-accent underline-offset-2 hover:underline"
               >
                 Techie Solutions
-              </a>{" "}
-              so you get one-person <span className="font-bold">accountability</span> with the depth of a team.
+              </a>
+              . One point of accountability. Full team depth.
             </p>
 
             {/* Certification badge */}
