@@ -44,6 +44,30 @@ export default function About() {
               alike. The scope changes. The standard doesn&apos;t.
             </p>
 
+            <p className="text-lg leading-relaxed text-text-secondary">
+              And when a project calls for more horsepower, I don&apos;t go it alone.
+              I work within a trusted network of senior consultants —
+              including{" "}
+              <a
+                href="http://eladaus.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline-offset-2 hover:underline"
+              >
+                Eladaus
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://techie.fi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline-offset-2 hover:underline"
+              >
+                Techie Solutions
+              </a>{" "}
+              so you get one-person <span className="font-bold">accountability</span> with the depth of a team.
+            </p>
+
             {/* Certification badge */}
             <motion.div
               variants={fadeInUp}
