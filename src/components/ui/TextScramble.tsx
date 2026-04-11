@@ -54,8 +54,16 @@ export default function TextScramble({
   }, [isInView, text, speed]);
 
   return (
-    <span ref={ref} className={className}>
-      {displayText}
+    // Outer span is block-level so the invisible ghost can reserve the correct
+    // wrapped height; the scrambled text is then absolutely overlaid — this
+    // prevents the varying char widths from causing layout shifts on mobile.
+    <span ref={ref} className={`relative block ${className}`}>
+      {/* Ghost: invisible real text that locks in the correct line-wrap height */}
+      <span className="invisible" aria-hidden="true">
+        {text}
+      </span>
+      {/* Scrambled text sits on top without affecting document flow */}
+      <span className="absolute inset-0 text-center">{displayText}</span>
     </span>
   );
 }
