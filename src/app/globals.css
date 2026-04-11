@@ -44,8 +44,13 @@
   --font-mono: var(--font-mono);
 }
 
-* {
-  cursor: none;
+/* Hide the native cursor only when a fine pointer (mouse) is the primary input.
+   On touch-primary devices (phones, some Windows touch laptops) we leave it
+   visible so users aren't left with no cursor at all. */
+@media (pointer: fine) {
+  * {
+    cursor: none;
+  }
 }
 
 html {

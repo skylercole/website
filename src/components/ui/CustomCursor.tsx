@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const [visible, setVisible] = useState(false);
+  const mouseX = useMotionValue(-100);
+  const mouseY = useMotionValue(-100);
   const scale = useMotionValue(1);
 
   const springConfig = { damping: 25, stiffness: 300, mass: 0.5 };
@@ -15,13 +16,16 @@ export default function CustomCursor() {
   const springScale = useSpring(scale, { damping: 20, stiffness: 400 });
 
   useEffect(() => {
-    const isTouchDevice =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    if (isTouchDevice) return;
+    // pointer:coarse = touch/stylus primary input; pointer:fine = mouse.
+    // navigator.maxTouchPoints > 0 alone is wrong — Windows laptops expose
+    // touch points even when the user is on a mouse, causing false positives.
+    const isTouchPrimary = window.matchMedia("(pointer: coarse)").matches;
+    if (isTouchPrimary) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
+      setVisible(true);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -62,9 +66,13 @@ export default function CustomCursor() {
           scale: springScale,
           translateX: "-50%",
           translateY: "-50%",
+          // Stays off-screen until first mousemove so it never flashes at (0,0)
+          opacity: visible ? 1 : 0,
         }}
       >
-        <div className="h-3 w-3 rounded-full bg-accent mix-blend-difference" />
+        {/* Avoid mix-blend-difference — it silently breaks on Windows with
+            GPU compositing and renders the element invisible */}
+        <div className="h-3 w-3 rounded-full border border-accent bg-accent/40" />
       </motion.div>
     </>
   );
