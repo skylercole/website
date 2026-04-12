@@ -1,3 +1,5 @@
+export const BASE_PATH = "/portfolio";
+
 export const SITE = {
   name: "300 Consulting",
   title: "300 Consulting | Solution Architecture & Cloud Engineering",
