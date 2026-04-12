@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 import { Menu, X } from "lucide-react";
 
@@ -30,11 +31,18 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#"
-          className="flex items-center gap-[1px] font-heading text-xl font-bold tracking-tight text-text-primary"
+          className="flex items-center gap-2 font-heading text-xl font-bold tracking-tight text-text-primary"
           data-cursor-hover
         >
-<span className="text-accent">300</span>
-          <span className="font-light mx-[5px]">CONSULTING</span>
+          <Image
+            src="/logo-mark.png"
+            alt="300 Consulting"
+            width={28}
+            height={28}
+            className="h-7 w-auto opacity-85"
+          />
+          <span className="text-accent">300</span>
+          <span className="font-light mx-[1px]">CONSULTING</span>
         </a>
 
         {/* Desktop nav */}

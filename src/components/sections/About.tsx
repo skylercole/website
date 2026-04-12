@@ -17,10 +17,10 @@ export default function About() {
             variants={slideInLeft}
           >
             <p className="font-heading text-3xl font-bold leading-snug tracking-tight md:text-4xl lg:text-5xl">
-              Not just a developer.
+              A developer, first.
               <br />
               <span className="text-accent">
-                24 years of knowing what breaks at scale.
+                24 years of learning what holds up.
               </span>
             </p>
           </motion.div>
@@ -35,17 +35,17 @@ export default function About() {
           >
             <p className="text-lg leading-relaxed text-text-secondary">
               300 Consulting is a one-person firm. When you work with me, you
-              work directly with a Microsoft Certified Azure Solutions Architect
-              — from the first conversation to production deployment.
+              work directly with the person doing the work — from the first
+              conversation to production deployment.
             </p>
             <p className="text-lg leading-relaxed text-text-secondary">
-              I&apos;ve worked with Fortune 100 companies and early-stage startups.
-              The context varies — the quality of the work doesn&apos;t.
+              I&apos;ve worked across large enterprises and early-stage startups.
+              The environments differ, but the standard of work stays the same.
             </p>
 
             <p className="text-lg leading-relaxed text-text-secondary">
-              When a project demands broader reach, I draw on a vetted network
-              of senior specialists — including{" "}
+              When a project needs more hands, I bring in people I trust and 
+              have worked with before — including{" "}
               <a
                 href="http://eladaus.com/"
                 target="_blank"
