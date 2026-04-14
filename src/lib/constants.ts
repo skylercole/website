@@ -227,27 +227,27 @@ export const DOCTRINE = [
   {
     numeral: "I",
     title: "Duty",
-    body: "The client's outcome is the contract. Scope creep is not heroism.",
+    body: "The work is owed. It is finished when the client can stand without us.",
   },
   {
     numeral: "II",
     title: "Discipline",
-    body: "Ship on a schedule. Measure what matters. No shortcuts that become someone else's problem.",
+    body: "Schedules are kept. Estimates are held. Effort does not waver.",
   },
   {
     numeral: "III",
     title: "Craft",
-    body: "Code is read more than written. Systems run longer than they take to build.",
+    body: "Code is written to be read. Systems are built for those who will run them.",
   },
   {
     numeral: "IV",
     title: "Restraint",
-    body: "The simplest design that holds. No cleverness that can't be maintained on a Monday morning.",
+    body: "The plainest design that bears the load. Complexity is earned.",
   },
   {
     numeral: "V",
     title: "Finish",
-    body: "The job ends at handoff, not at deploy.",
+    body: "The work is not done until it stands without the hand that made it.",
   },
 ];
 
