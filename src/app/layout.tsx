@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/constants";
@@ -86,6 +87,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-bg-base text-text-primary">
+        <Script
+          src="https://gc.zgo.at/count.js"
+          strategy="afterInteractive"
+          {...{
+            "data-goatcounter": "https://300consulting.goatcounter.com/count",
+          }}
+        />
         {children}
       </body>
     </html>

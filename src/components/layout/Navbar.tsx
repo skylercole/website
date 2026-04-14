@@ -39,7 +39,7 @@ export default function Navbar() {
             alt="300 Consulting"
             width={42}
             height={42}
-            className="h-[42px] w-auto opacity-85"
+            className="hidden h-[42px] w-auto opacity-85 md:block"
           />
           <span className="text-accent">300</span>
           <span className="font-light mx-[1px]">CONSULTING</span>
