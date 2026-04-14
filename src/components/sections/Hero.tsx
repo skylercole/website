@@ -35,7 +35,7 @@ export default function Hero() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="mx-auto mt-6 max-w-2xl text-lg text-text-secondary md:text-xl"
         >
-          Solution Architecture, Development, and Cloud Engineering for companies that take long-term quality seriously.
+          Solution architecture and cloud engineering. Built once. Built to hold.
         </motion.p>
 
         {/* CTA */}
@@ -45,7 +45,7 @@ export default function Hero() {
           transition={{ delay: 1.1, duration: 0.6 }}
           className="mt-10"
         >
-          <MagneticButton href="#case-studies">Explore case studies</MagneticButton>
+          <MagneticButton href="#case-studies">See the work</MagneticButton>
         </motion.div>
       </div>
 

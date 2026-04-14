@@ -16,14 +16,13 @@ export default function CaseStudies() {
         <ScrollReveal>
           <div className="mb-16">
             <span className="font-mono text-xs tracking-widest text-accent uppercase">
-              Case Studies
+              § Case Studies
             </span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight md:text-5xl">
-              Selected work
+              Selected work.
             </h2>
             <p className="mt-4 max-w-xl text-text-secondary">
-              A selection of projects spanning energy, logistics, aviation, IoT,
-              and enterprise SaaS — each with measurable outcomes.
+              Energy, logistics, aviation, IoT, enterprise SaaS. Each one shipped.
             </p>
           </div>
         </ScrollReveal>

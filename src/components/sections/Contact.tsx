@@ -34,16 +34,15 @@ export default function Contact() {
       <div className="mx-auto max-w-3xl px-6 text-center">
         <ScrollReveal>
           <span className="font-mono text-xs tracking-widest text-accent uppercase">
-            Get in touch
+            § Send word
           </span>
           <h2 className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-6xl">
-            Have a project that needs
+            A project
             <br />
-            <span className="text-accent">the right foundation?</span>
+            <span className="text-accent">worth doing right?</span>
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-lg text-text-secondary">
-            Working on something that needs solid architecture or cloud
-            expertise? Let&apos;s talk.
+            Tell me what you&apos;re building. I&apos;ll tell you what it takes.
           </p>
         </ScrollReveal>
 
@@ -75,7 +74,7 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               className="mt-2 font-mono text-xs text-accent"
             >
-              Copied to clipboard
+              Copied. Send word.
             </motion.p>
           )}
         </motion.div>

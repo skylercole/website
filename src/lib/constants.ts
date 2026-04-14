@@ -4,7 +4,7 @@ export const SITE = {
   name: "300 Consulting",
   title: "300 Consulting | Solution Architecture & Cloud Engineering",
   description:
-    "Solution Architecture and Cloud Engineering for companies that need it done right the first time. 24+ years of enterprise-grade delivery.",
+    "Solution architecture and cloud engineering. Built once. Built to hold. 24+ years of enterprise delivery.",
   url: "https://300consulting.fi",
   email: "stanislav.sp@300consulting.fi",
   linkedin: "https://www.linkedin.com/in/stanislav-sp/",
@@ -22,54 +22,49 @@ export const METRICS = [
 export const CAPABILITIES = [
   {
     title: "Full-Stack Development",
-    description: "End-to-end delivery, without handoffs or communication gaps.",
+    description: "End-to-end delivery. No handoffs, no gaps.",
     icon: "Layers",
     size: "medium" as const,
   },
   {
     title: "Cloud Architecture",
-    description:
-      "Migrate, modernize, and scale reliably.",
+    description: "Migrate. Modernize. Scale without drama.",
     icon: "Cloud",
     size: "large" as const,
   },
   {
     title: "Distributed Systems",
-    description: "50+ microservices created, migrated, or scaled. Zero downtime.",
+    description: "50+ microservices built or moved. Zero downtime.",
     icon: "Network",
     size: "small" as const,
   },
   {
     title: "Solution Design",
-    description:
-      "From whiteboard to production-grade architecture quickly and efficiently.",
+    description: "Whiteboard to production. Without the detour.",
     icon: "PenTool",
     size: "small" as const,
   },
   {
     title: "AI / ML Integration",
-    description: "Practical ML that goes into production.",
+    description: "Machine learning that survives production.",
     icon: "Brain",
     size: "medium" as const,
   },
   {
     title: "DevOps & Infrastructure",
-    description:
-      "CI/CD, Kubernetes, Terraform, and more — the plumbing that makes everything else possible.",
+    description: "CI/CD, Kubernetes, Terraform. The plumbing that holds.",
     icon: "Container",
     size: "small" as const,
   },
   {
     title: "IoT & Real-Time Systems",
-    description:
-      "Sensor data to dashboards. Physical world, digital intelligence.",
+    description: "Sensors to dashboards. Physical world, measured.",
     icon: "Cpu",
     size: "small" as const,
   },
   {
     title: "Legacy Modernization",
-    description:
-      "10+ projects modernized and migrated to modern architectures.",
+    description: "10+ systems pulled into the present, intact.",
     icon: "RefreshCw",
     size: "large" as const,
   },
@@ -209,31 +204,56 @@ export const PROCESS_STEPS = [
   {
     number: "/01",
     title: "Discovery",
-    description:
-      "We define the problem worth solving and the constraints worth respecting.",
+    description: "Define the problem worth solving.",
   },
   {
     number: "/02",
     title: "Architecture",
-    description:
-      "A blueprint you can challenge, understand, and stand behind.",
+    description: "A blueprint you can stand behind.",
   },
   {
     number: "/03",
     title: "Build",
-    description:
-      "Incremental delivery. Working software every sprint.",
+    description: "Incremental delivery. Working software every sprint.",
   },
   {
     number: "/04",
     title: "Handoff",
-    description:
-      "Documentation, knowledge transfer, and a system your team can own.",
+    description: "Docs, knowledge, and a system your team owns.",
+  },
+];
+
+export const DOCTRINE = [
+  {
+    numeral: "I",
+    title: "Duty",
+    body: "The client's outcome is the contract. Scope creep is not heroism.",
+  },
+  {
+    numeral: "II",
+    title: "Discipline",
+    body: "Ship on a schedule. Measure what matters. No shortcuts that become someone else's problem.",
+  },
+  {
+    numeral: "III",
+    title: "Craft",
+    body: "Code is read more than written. Systems run longer than they take to build.",
+  },
+  {
+    numeral: "IV",
+    title: "Restraint",
+    body: "The simplest design that holds. No cleverness that can't be maintained on a Monday morning.",
+  },
+  {
+    numeral: "V",
+    title: "Finish",
+    body: "The job ends at handoff, not at deploy.",
   },
 ];
 
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
+  { label: "Doctrine", href: "#doctrine" },
   { label: "Capabilities", href: "#capabilities" },
   { label: "Work", href: "#case-studies" },
   // { label: "Process", href: "#process" },

@@ -12,10 +12,10 @@ export default function TechStack() {
         <ScrollReveal>
           <div className="mb-16">
             <span className="font-mono text-xs tracking-widest text-accent uppercase">
-              Tech Stack
+              § Tech Stack
             </span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight md:text-5xl">
-              Tools of the trade
+              Tools of the trade.
             </h2>
           </div>
         </ScrollReveal>

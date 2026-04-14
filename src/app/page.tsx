@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import Metrics from "@/components/sections/Metrics";
 import About from "@/components/sections/About";
+import Doctrine from "@/components/sections/Doctrine";
 import Capabilities from "@/components/sections/Capabilities";
 import TechStack from "@/components/sections/TechStack";
 import CaseStudies from "@/components/sections/CaseStudies";
@@ -32,6 +33,7 @@ export default function Home() {
         <Hero />
         <Metrics />
         <About />
+        <Doctrine />
         <Capabilities />
         <TechStack />
         <CaseStudies />

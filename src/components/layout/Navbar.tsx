@@ -62,7 +62,7 @@ export default function Navbar() {
             className="rounded-full border border-accent/30 bg-accent/10 px-5 py-2 font-heading text-sm text-accent transition-all duration-300 hover:border-accent hover:bg-accent/20"
             data-cursor-hover
           >
-            Get in touch
+            Send word
           </a>
         </div>
 
@@ -102,7 +102,7 @@ export default function Navbar() {
                 className="mt-2 inline-block rounded-full border border-accent/30 bg-accent/10 px-5 py-2 text-center font-heading text-sm text-accent"
                 onClick={() => setMobileOpen(false)}
               >
-                Get in touch
+                Send word
               </a>
             </div>
           </motion.div>

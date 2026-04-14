@@ -34,13 +34,12 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg leading-relaxed text-text-secondary">
-              300 Consulting is a one-person firm. When you work with me, you
-              work directly with the person doing the work — from the first
-              conversation to production deployment.
+              300 Consulting is a one-person firm. One point of contact, from
+              first conversation to production. 
             </p>
             <p className="text-lg leading-relaxed text-text-secondary">
-              I&apos;ve worked across large enterprises and early-stage startups.
-              The environments differ, but the standard of work stays the same.
+              Enterprise or early-stage, the environments differ. The standard
+              does not.
             </p>
 
             <p className="text-lg leading-relaxed text-text-secondary">
