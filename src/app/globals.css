@@ -17,6 +17,9 @@
   --border-subtle: rgba(255, 255, 255, 0.06);
   --border-hover: rgba(16, 185, 129, 0.4);
 
+  --interactive: rgba(245, 245, 247, 0.9);
+  --interactive-hover: rgba(245, 245, 247, 1);
+
   --font-heading: var(--font-space-grotesk);
   --font-body: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
@@ -38,6 +41,9 @@
 
   --color-border-subtle: var(--border-subtle);
   --color-border-hover: var(--border-hover);
+
+  --color-interactive: var(--interactive);
+  --color-interactive-hover: var(--interactive-hover);
 
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);

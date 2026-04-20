@@ -120,6 +120,7 @@ export const CASE_STUDIES = [
       "Contributed to resilient, distributed applications used across large-scale enterprise systems. Migrated 50+ microservices from AWS to Azure and Kubernetes.",
     tech: [".NET", "Azure", "AWS", "Kubernetes", "Kafka", "Terraform"],
     gradient: "from-[#10b98118] via-[#0c0c0c00] to-[#10b98108]",
+    diagram: "relex-migration",
   },
   {
     client: "Airpro",
@@ -129,6 +130,7 @@ export const CASE_STUDIES = [
       "Enabled near real-time analytics across operations to manage large-scale data flows and support data-driven decision-making across the organization.",
     tech: [".NET", "Azure", "Databricks", "Kubernetes", "Terraform"],
     gradient: "from-[#1e1e2e] via-[#0c0c0c00] to-[#10b98108]",
+    diagram: "placeholder",
   },
   {
     client: "Rolls-Royce Marine",
@@ -138,6 +140,7 @@ export const CASE_STUDIES = [
       "Led development of an interfacing layer for Intelligent Asset Management and Remote/Autonomous operations in shipping, integrating sensor data, AI object detection, and video streaming.",
     tech: ["C++", "Unity", "gRPC", "LiDAR", "AI"],
     gradient: "from-[#0d2318] via-[#0c0c0c00] to-[#161616]",
+    diagram: "rolls-royce-sensors",
   },
   {
     client: "Rocla / Mitsubishi",
@@ -147,6 +150,7 @@ export const CASE_STUDIES = [
       "Built an IoT dashboard for AGVs, enabling real-time monitoring, predictive maintenance, and maintenance-related sales lead generation.",
     tech: [".NET", "Azure", "Azure ML", "CosmosDB", "IoT"],
     gradient: "from-[#1a1a2a] via-[#0c0c0c00] to-[#0d2318]",
+    diagram: "rocla-iot",
   },
   {
     client: "Stora Enso",
@@ -156,6 +160,7 @@ export const CASE_STUDIES = [
       "Developed software for tracking the full lifecycle of wood-based buildings, from production to IoT-enabled performance monitoring. Built IoT solution covering consumer goods from production and logistics to consumption and recycling.",
     tech: ["React", ".NET", "IoT", "Azure"],
     gradient: "from-[#10b98112] via-[#161616] to-[#1e1e2e]",
+    diagram: "stora-enso-lifecycle",
   },
   {
     client: "Palkkaus.fi",
@@ -165,6 +170,7 @@ export const CASE_STUDIES = [
       "Developed API integration systems for accounting and payments, enabling seamless financial data flows across the platform.",
     tech: [".NET", "Angular"],
     gradient: "from-[#161616] via-[#0d2318] to-[#0c0c0c00]",
+    diagram: "placeholder",
   },
   {
     client: "Kone",
@@ -174,6 +180,7 @@ export const CASE_STUDIES = [
       "Built a domain-specific HTML VR browser for Microsoft HoloLens, enabling immersive visualization for elevator and building solutions.",
     tech: [".NET", "Unity"],
     gradient: "from-[#1e1e2e] via-[#0c0c0c00] to-[#0d1f15]",
+    diagram: "placeholder",
   },
   {
     client: "ABB",
@@ -183,6 +190,7 @@ export const CASE_STUDIES = [
       "Contributed to the development of the ABB Drive Composer tool, a professional PC tool for commissioning and maintaining ABB drives.",
     tech: [".NET"],
     gradient: "from-[#0d2318] via-[#161616] to-[#1a1a2a]",
+    diagram: "placeholder",
   },
 ];
 
@@ -252,10 +260,9 @@ export const DOCTRINE = [
 ];
 
 export const NAV_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Doctrine", href: "#doctrine" },
-  { label: "Capabilities", href: "#capabilities" },
   { label: "Work", href: "#case-studies" },
-  // { label: "Process", href: "#process" },
+  { label: "Doctrine", href: "#doctrine" },
+  { label: "About", href: "#about" },
+  { label: "Capabilities", href: "#capabilities" },
   { label: "Contact", href: "#contact" },
 ];

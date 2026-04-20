@@ -43,7 +43,7 @@ export default function TechStack() {
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-border-subtle bg-bg-base px-3 py-1.5 font-mono text-xs text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-accent"
+                    className="rounded-full border border-border-subtle bg-bg-base px-3 py-1.5 font-mono text-xs text-text-secondary transition-all duration-200 hover:border-white/20 hover:text-text-primary"
                   >
                     {item}
                   </span>

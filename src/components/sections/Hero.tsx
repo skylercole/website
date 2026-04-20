@@ -23,7 +23,7 @@ export default function Hero() {
           className="font-heading text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl"
         >
           <TextScramble
-            text="Architecting systems that outlast the hype."
+            text="Systems built to outlast their authors."
             speed={25}
           />
         </motion.h1>

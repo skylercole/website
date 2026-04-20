@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { DOCTRINE } from "@/lib/constants";
+import { DOCTRINE, BASE_PATH } from "@/lib/constants";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -54,6 +54,16 @@ export default function Doctrine() {
             </motion.li>
           ))}
         </motion.ol>
+
+        <div className="mt-16 text-center">
+          <a
+            href={`${BASE_PATH}/doctrine`}
+            className="font-mono text-xs tracking-[.2em] uppercase text-text-tertiary hover:text-[var(--accent-gold)] transition-colors"
+            data-cursor-hover
+          >
+            // carry the doctrine →
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -32,11 +32,11 @@ export default function Home() {
       <main>
         <Hero />
         <Metrics />
-        <About />
+        <CaseStudies />
         <Doctrine />
+        <About />
         <Capabilities />
         <TechStack />
-        <CaseStudies />
         <ClientLogos />
         <Contact />
       </main>

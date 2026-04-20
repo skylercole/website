@@ -9,7 +9,16 @@ interface TextScrambleProps {
   speed?: number;
 }
 
-const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+const LOWER = "abcdefghijklmnopqrstuvwxyz";
+const UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const DIGITS = "0123456789";
+
+function scrambleChar(real: string): string {
+  if (real >= "a" && real <= "z") return LOWER[Math.floor(Math.random() * LOWER.length)];
+  if (real >= "A" && real <= "Z") return UPPER[Math.floor(Math.random() * UPPER.length)];
+  if (real >= "0" && real <= "9") return DIGITS[Math.floor(Math.random() * DIGITS.length)];
+  return real;
+}
 
 export default function TextScramble({
   text,
@@ -37,7 +46,7 @@ export default function TextScramble({
           .map((char, idx) => {
             if (char === " ") return " ";
             if (idx < iteration) return char;
-            return CHARS[Math.floor(Math.random() * CHARS.length)];
+            return scrambleChar(char);
           })
           .join("")
       );
