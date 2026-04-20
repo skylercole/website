@@ -36,8 +36,7 @@ export default function CaseStudies() {
           className="grid gap-4 md:grid-cols-2"
         >
           {CASE_STUDIES.map((study, i) => {
-            const Diagram =
-              DIAGRAM_MAP[study.diagram] ?? DIAGRAM_MAP.placeholder;
+            const Diagram = study.diagram ? DIAGRAM_MAP[study.diagram] : null;
             return (
             <motion.div
               key={study.client}
@@ -45,9 +44,11 @@ export default function CaseStudies() {
               className={`group relative overflow-hidden rounded-2xl border border-border-subtle bg-gradient-to-br ${study.gradient} bg-bg-surface transition-all duration-500 hover:-translate-y-1 hover:border-border-hover hover:shadow-[0_0_60px_rgba(16,185,129,0.06)]`}
               data-cursor-hover
             >
-              <div className="relative aspect-[16/9] overflow-hidden border-b border-border-subtle bg-bg-base/60">
-                <Diagram />
-              </div>
+              {Diagram && (
+                <div className="relative aspect-[16/9] overflow-hidden border-b border-border-subtle bg-bg-base/60">
+                  <Diagram />
+                </div>
+              )}
               <button
                 onClick={() =>
                   setExpandedIdx(expandedIdx === i ? null : i)

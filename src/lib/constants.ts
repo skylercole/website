@@ -123,16 +123,6 @@ export const CASE_STUDIES = [
     diagram: "relex-migration",
   },
   {
-    client: "Airpro",
-    location: "Finland",
-    outcome: "Near real-time analytics for Finland's airport ground handling operations.",
-    description:
-      "Enabled near real-time analytics across operations to manage large-scale data flows and support data-driven decision-making across the organization.",
-    tech: [".NET", "Azure", "Databricks", "Kubernetes", "Terraform"],
-    gradient: "from-[#1e1e2e] via-[#0c0c0c00] to-[#10b98108]",
-    diagram: "placeholder",
-  },
-  {
     client: "Rolls-Royce Marine",
     location: "Finland",
     outcome: "AI object detection and autonomous operations for shipping.",
@@ -163,6 +153,15 @@ export const CASE_STUDIES = [
     diagram: "stora-enso-lifecycle",
   },
   {
+    client: "Airpro",
+    location: "Finland",
+    outcome: "Near real-time analytics for Finland's airport ground handling operations.",
+    description:
+      "Enabled near real-time analytics across operations to manage large-scale data flows and support data-driven decision-making across the organization.",
+    tech: [".NET", "Azure", "Databricks", "Kubernetes", "Terraform"],
+    gradient: "from-[#1e1e2e] via-[#0c0c0c00] to-[#10b98108]",
+  },
+  {
     client: "Palkkaus.fi",
     location: "Finland",
     outcome: "API integration systems for accounting and payments.",
@@ -170,7 +169,6 @@ export const CASE_STUDIES = [
       "Developed API integration systems for accounting and payments, enabling seamless financial data flows across the platform.",
     tech: [".NET", "Angular"],
     gradient: "from-[#161616] via-[#0d2318] to-[#0c0c0c00]",
-    diagram: "placeholder",
   },
   {
     client: "Kone",
@@ -180,7 +178,6 @@ export const CASE_STUDIES = [
       "Built a domain-specific HTML VR browser for Microsoft HoloLens, enabling immersive visualization for elevator and building solutions.",
     tech: [".NET", "Unity"],
     gradient: "from-[#1e1e2e] via-[#0c0c0c00] to-[#0d1f15]",
-    diagram: "placeholder",
   },
   {
     client: "ABB",
@@ -190,7 +187,6 @@ export const CASE_STUDIES = [
       "Contributed to the development of the ABB Drive Composer tool, a professional PC tool for commissioning and maintaining ABB drives.",
     tech: [".NET"],
     gradient: "from-[#0d2318] via-[#161616] to-[#1a1a2a]",
-    diagram: "placeholder",
   },
 ];
 

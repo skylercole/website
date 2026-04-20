@@ -3,12 +3,10 @@ import RelexMigration from "./RelexMigration";
 import RollsRoyceSensors from "./RollsRoyceSensors";
 import RoclaIoT from "./RoclaIoT";
 import StoraEnsoLifecycle from "./StoraEnsoLifecycle";
-import PlaceholderDiagram from "./PlaceholderDiagram";
 
 export const DIAGRAM_MAP: Record<string, ComponentType> = {
   "relex-migration": RelexMigration,
   "rolls-royce-sensors": RollsRoyceSensors,
   "rocla-iot": RoclaIoT,
   "stora-enso-lifecycle": StoraEnsoLifecycle,
-  placeholder: PlaceholderDiagram,
 };

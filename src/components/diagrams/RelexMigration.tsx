@@ -36,8 +36,9 @@ export default function RelexMigration() {
         <polyline points="260,106 270,112 260,118" />
       </g>
       <text
-        x="160"
+        x="199"
         y="104"
+        textAnchor="middle"
         fontFamily="JetBrains Mono, monospace"
         fontSize="8"
         fill="#10b981"
@@ -46,8 +47,9 @@ export default function RelexMigration() {
         // migrate · zero downtime
       </text>
       <text
-        x="160"
+        x="199"
         y="128"
+        textAnchor="middle"
         fontFamily="JetBrains Mono, monospace"
         fontSize="7"
         fill="rgba(245,245,247,.35)"
@@ -92,7 +94,7 @@ export default function RelexMigration() {
         fill="rgba(245,245,247,.35)"
         letterSpacing="1"
       >
-        fig · 50+ services moved, incrementally, over 6 months
+        fig · 50+ services updated and moved to Kubernetes in Azure
       </text>
     </svg>
   );
