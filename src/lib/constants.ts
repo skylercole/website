@@ -135,9 +135,9 @@ export const CASE_STUDIES = [
   {
     client: "Rocla / Mitsubishi",
     location: "Finland",
-    outcome: "IoT dashboards that turned maintenance data into sales leads.",
+    outcome: "Predictive maintenance dashboards for an AGV fleet.",
     description:
-      "Built an IoT dashboard for AGVs, enabling real-time monitoring, predictive maintenance, and maintenance-related sales lead generation.",
+      "Built an IoT dashboard for AGVs with real-time telemetry and predictive maintenance — surfacing faults before they cause downtime and feeding service scheduling directly from live equipment signals.",
     tech: [".NET", "Azure", "Azure ML", "CosmosDB", "IoT"],
     gradient: "from-[#1a1a2a] via-[#0c0c0c00] to-[#0d2318]",
     diagram: "rocla-iot",

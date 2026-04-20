@@ -48,20 +48,20 @@ export default function RoclaIoT() {
         <polyline points="316,119 326,125 316,131" />
       </g>
 
-      {/* leads node */}
+      {/* predictive maintenance node */}
       <g stroke="#10b981" strokeWidth="1" fill="none">
         <rect x="326" y="95" width="56" height="60" rx="6" />
         <circle cx="354" cy="125" r="3" fill="#10b981" stroke="none" />
       </g>
       <text x="333" y="114" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#10b981" letterSpacing="1.2">
-        SALES
+        PREDICT
       </text>
       <text x="333" y="148" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#10b981" letterSpacing="1.2">
-        LEADS
+        MAINT.
       </text>
 
       <text x="18" y="215" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="rgba(245,245,247,.35)" letterSpacing="1">
-        // maintenance data → revenue signal
+        // telemetry → faults caught before downtime
       </text>
     </svg>
   );
