@@ -57,7 +57,7 @@ export default function Doctrine() {
 
         <div className="mt-16 text-center">
           <a
-            href={`${BASE_PATH}/doctrine`}
+            href={`${BASE_PATH}/doctrine/`}
             className="font-mono text-xs tracking-[.2em] uppercase text-text-tertiary hover:text-[var(--accent-gold)] transition-colors"
             data-cursor-hover
           >
