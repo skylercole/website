@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/animations";
-import { SITE } from "@/lib/constants";
+import { SITE, BASE_PATH } from "@/lib/constants";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { Copy, Check, MapPin } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -33,6 +33,22 @@ export default function Contact() {
     <section id="contact" className="py-24 md:py-32">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <ScrollReveal>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mx-auto mb-8 h-28 w-28 overflow-hidden rounded-full border border-border-subtle bg-bg-surface shadow-[0_10px_40px_-12px_rgba(0,0,0,0.6)] ring-1 ring-white/[0.04] md:h-32 md:w-32"
+          >
+            {/* Plain img avoids Next.js static-export basePath bug with unoptimized images */}
+            <img
+              src={`${BASE_PATH}/me.jpeg`}
+              alt="Stanislav Stoyanov-Pitkänen"
+              width={128}
+              height={128}
+              className="h-full w-full object-cover"
+            />
+          </motion.div>
           <span className="font-mono text-xs tracking-widest text-accent uppercase">
             § Send word
           </span>

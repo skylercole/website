@@ -123,7 +123,7 @@ export const CASE_STUDIES = [
     diagram: "relex-migration",
   },
   {
-    client: "Rolls-Royce Marine",
+    client: "Rolls-Royce Marine / Kongsberg Maritime",
     location: "Finland",
     outcome: "AI object detection and autonomous operations for shipping.",
     description:
@@ -153,7 +153,7 @@ export const CASE_STUDIES = [
     diagram: "stora-enso-lifecycle",
   },
   {
-    client: "Airpro",
+    client: "Airpro / Finavia",
     location: "Finland",
     outcome: "Near real-time analytics for Finland's airport ground handling operations.",
     description:
@@ -192,9 +192,9 @@ export const CASE_STUDIES = [
 
 export const CLIENT_LOGOS = [
   "Relex Solutions",
-  "Airpro",
-  "Rolls-Royce",
-  "Mitsubishi Electric",
+  "Airpro / Finavia",
+  "Rolls-Royce Marine / Kongsberg Maritime",
+  "Rocla / Mitsubishi Electric",
   "Stora Enso",
   "Kone",
   "ABB",
