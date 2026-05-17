@@ -90,7 +90,7 @@ export const TECH_STACK = [
   },
   {
     category: "DevOps",
-    items: ["Kubernetes", "Docker", "Terraform", "GitHub Actions", "Azure DevOps"],
+    items: ["Kubernetes", "Docker", "Terraform", "GitHub Actions", "Azure DevOps", "Backstage"],
   },
   {
     category: "AI / ML",
@@ -123,7 +123,7 @@ export const CASE_STUDIES = [
     diagram: "relex-migration",
   },
   {
-    client: "Rolls-Royce Marine / Kongsberg Maritime",
+    client: "Rolls-Royce Marine",
     location: "Finland",
     outcome: "AI object detection and autonomous operations for shipping.",
     description:
@@ -193,7 +193,7 @@ export const CASE_STUDIES = [
 export const CLIENT_LOGOS = [
   "Relex Solutions",
   "Airpro / Finavia",
-  "Rolls-Royce Marine / Kongsberg Maritime",
+  "Rolls-Royce Marine",
   "Rocla / Mitsubishi Electric",
   "Stora Enso",
   "Kone",
@@ -257,8 +257,15 @@ export const DOCTRINE = [
 
 export const NAV_LINKS = [
   { label: "Work", href: "#case-studies" },
-  { label: "Doctrine", href: "#doctrine" },
   { label: "About", href: "#about" },
   { label: "Capabilities", href: "#capabilities" },
+  { label: "Doctrine", href: "#doctrine" },
   { label: "Contact", href: "#contact" },
 ];
+
+export const PATRONAGE = {
+  athlete: "Matfei Polishchuk",
+  title: "U21 Finnish judo champion",
+  club: "Tikkurilan Judokat",
+  clubUrl: "https://www.tikkurilanjudokat.fi/",
+};
