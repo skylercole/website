@@ -33,16 +33,16 @@ export default function Navbar() {
           className="flex items-center gap-2 font-heading text-xl font-bold tracking-tight text-text-primary"
           data-cursor-hover
         >
+          <span className="text-text-secondary">300</span>
+          <span className="text-accent font-light mx-[1px]">CONSULTING</span>
           {/* Plain img avoids Next.js static-export basePath bug with unoptimized images */}
           <img
             src={`${BASE_PATH}/logo-mark.png`}
             alt="300 Consulting"
             width={42}
             height={42}
-            className="hidden h-[42px] w-auto opacity-85 md:block"
+            className="ml-2 hidden h-[42px] w-auto opacity-85 md:block"
           />
-          <span className="text-accent">300</span>
-          <span className="font-light mx-[1px]">CONSULTING</span>
         </a>
 
         {/* Desktop nav */}

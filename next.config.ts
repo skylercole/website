@@ -1,4 +1,6 @@
 import type { NextConfig } from "next";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 const nextConfig: NextConfig = {
   output: "export",
@@ -8,6 +10,11 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
+  },
+  // Pin Turbopack's workspace root to this folder so it doesn't get confused
+  // by stray lockfiles in parent directories (yarn.lock, etc.)
+  turbopack: {
+    root: dirname(fileURLToPath(import.meta.url)),
   },
 };
 
