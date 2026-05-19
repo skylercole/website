@@ -23,7 +23,8 @@ export default function CaseStudies() {
               Selected work.
             </h2>
             <p className="mt-4 max-w-xl text-text-secondary">
-              Energy, logistics, aviation, IoT, enterprise SaaS. Each one shipped.
+              Enterprise SaaS, aviation, logistics, IoT, and industrial tools.
+              The common part is delivery.
             </p>
           </div>
         </ScrollReveal>

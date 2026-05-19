@@ -20,7 +20,7 @@ export default function About() {
               A developer, first.
               <br />
               <span className="text-accent">
-                24 years of learning what holds up.
+                24 years close to production.
               </span>
             </p>
           </motion.div>
@@ -35,16 +35,17 @@ export default function About() {
           >
             <p className="text-lg leading-relaxed text-text-secondary">
               300 Consulting is a one-person firm. One point of contact, from
-              first conversation to production. 
+              first conversation to production.
             </p>
             <p className="text-lg leading-relaxed text-text-secondary">
-              Enterprise or early-stage, the environments differ. The standard
-              does not.
+              The clients range from early-stage companies to global enterprises.
+              The job stays the same: make the system work, and make it
+              maintainable.
             </p>
 
             <p className="text-lg leading-relaxed text-text-secondary">
-              When a project needs more hands, I bring in people I trust and 
-              have worked with before — including{" "}
+              When a project needs more hands, I bring in people I trust and
+              have worked with before, including{" "}
               <a
                 href="http://eladaus.com/"
                 target="_blank"
@@ -62,7 +63,7 @@ export default function About() {
               >
                 Techie Solutions
               </a>
-              . One point of contact, with the depth of a full team when needed.
+              . The accountability stays in one place.
             </p>
 
             {/* Certification badge */}

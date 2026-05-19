@@ -22,8 +22,8 @@ export default function Patronage() {
             300 Consulting supports{" "}
             <span className="text-text-primary font-semibold">
               {PATRONAGE.athlete}
-            </span>{" "}
-            — {PATRONAGE.title}, training with{" "}
+            </span>
+            {`, ${PATRONAGE.title}, training with `}
             <a
               href={PATRONAGE.clubUrl}
               target="_blank"
@@ -35,7 +35,7 @@ export default function Patronage() {
             .
           </p>
           <p className="mt-3 font-mono text-xs tracking-widest uppercase text-text-tertiary">
-            The same standard. A different mat.
+            Giving back to the next generation.
           </p>
         </ScrollReveal>
       </div>

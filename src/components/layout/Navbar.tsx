@@ -62,7 +62,7 @@ export default function Navbar() {
             className="rounded-full border border-border-subtle bg-transparent px-5 py-2 font-heading text-sm text-text-primary transition-all duration-300 hover:border-white/20 hover:bg-white/[0.03]"
             data-cursor-hover
           >
-            Send word
+            Email
           </a>
         </div>
 
@@ -102,7 +102,7 @@ export default function Navbar() {
                 className="mt-2 inline-block rounded-full border border-border-subtle bg-transparent px-5 py-2 text-center font-heading text-sm text-text-primary transition-all duration-300 hover:border-white/20 hover:bg-white/[0.03]"
                 onClick={() => setMobileOpen(false)}
               >
-                Send word
+                Email
               </a>
             </div>
           </motion.div>

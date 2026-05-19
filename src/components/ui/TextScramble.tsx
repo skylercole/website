@@ -64,7 +64,7 @@ export default function TextScramble({
 
   return (
     // Outer span is block-level so the invisible ghost can reserve the correct
-    // wrapped height; the scrambled text is then absolutely overlaid — this
+    // wrapped height; the scrambled text is then absolutely overlaid, which
     // prevents the varying char widths from causing layout shifts on mobile.
     <span ref={ref} className={`relative block ${className}`}>
       {/* Ghost: invisible real text that locks in the correct line-wrap height */}

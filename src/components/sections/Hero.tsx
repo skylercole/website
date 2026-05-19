@@ -23,7 +23,7 @@ export default function Hero() {
           className="font-heading text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl"
         >
           <TextScramble
-            text="Systems built to outlast their authors."
+            text="Software built for the team that has to run it."
             speed={25}
           />
         </motion.h1>
@@ -35,7 +35,7 @@ export default function Hero() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="mx-auto mt-6 max-w-2xl text-lg text-text-secondary md:text-xl"
         >
-          Solution architecture and cloud engineering. Built once. Built to hold.
+          Architecture, cloud work, and production code from Helsinki.
         </motion.p>
 
         {/* CTA */}

@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/animations";
 import { SITE, BASE_PATH } from "@/lib/constants";
-import MagneticButton from "@/components/ui/MagneticButton";
 import { Copy, Check, MapPin } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -50,15 +49,15 @@ export default function Contact() {
             />
           </motion.div>
           <span className="font-mono text-xs tracking-widest text-accent uppercase">
-            § Send word
+            § Contact
           </span>
           <h2 className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-6xl">
-            A project
+            Have a project
             <br />
-            <span className="text-accent">worth doing right?</span>
+            <span className="text-accent">that has to hold?</span>
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-lg text-text-secondary">
-            Tell me what you&apos;re building. I&apos;ll tell you what it takes.
+            Send the short version. I&apos;ll tell you where I can help.
           </p>
         </ScrollReveal>
 
@@ -90,7 +89,7 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               className="mt-2 font-mono text-xs text-accent"
             >
-              Copied. Send word.
+              Copied.
             </motion.p>
           )}
         </motion.div>
@@ -134,7 +133,7 @@ export default function Contact() {
             <MapPin className="h-4 w-4" />
             <span>{SITE.location}</span>
             <span className="text-border-subtle">·</span>
-            <span>Works remotely. Available across timezones.</span>
+            <span>Remote work across time zones.</span>
           </div>
         </motion.div>
       </div>

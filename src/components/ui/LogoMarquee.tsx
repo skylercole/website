@@ -28,7 +28,7 @@ export default function LogoMarquee({
         } group-hover:[animation-play-state:paused]`}
       >
         {children}
-        {/* Duplicate for seamless loop */}
+        {/* Duplicate for a continuous loop */}
         {children}
       </div>
     </div>

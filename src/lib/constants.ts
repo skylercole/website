@@ -4,7 +4,7 @@ export const SITE = {
   name: "300 Consulting",
   title: "300 Consulting | Solution Architecture & Cloud Engineering",
   description:
-    "Solution architecture and cloud engineering. Built once. Built to hold. 24+ years of enterprise delivery.",
+    "Solution architecture and cloud engineering from Helsinki. 24+ years building systems that stay useful.",
   url: "https://300consulting.fi",
   email: "stanislav.sp@300consulting.fi",
   linkedin: "https://www.linkedin.com/in/stanislav-sp/",
@@ -22,49 +22,49 @@ export const METRICS = [
 export const CAPABILITIES = [
   {
     title: "Full-Stack Development",
-    description: "End-to-end delivery. No handoffs, no gaps.",
+    description: "One person accountable from design to release.",
     icon: "Layers",
     size: "medium" as const,
   },
   {
     title: "Cloud Architecture",
-    description: "Migrate. Modernize. Scale without drama.",
+    description: "Cloud migrations and platform work without drama.",
     icon: "Cloud",
     size: "large" as const,
   },
   {
     title: "Distributed Systems",
-    description: "50+ microservices built or moved. Zero downtime.",
+    description: "50+ microservices built or migrated.",
     icon: "Network",
     size: "small" as const,
   },
   {
     title: "Solution Design",
-    description: "Whiteboard to production. Without the detour.",
+    description: "Architecture that can become code.",
     icon: "PenTool",
     size: "small" as const,
   },
   {
     title: "AI / ML Integration",
-    description: "Machine learning that survives production.",
+    description: "ML features that make it to production.",
     icon: "Brain",
     size: "medium" as const,
   },
   {
     title: "DevOps & Infrastructure",
-    description: "CI/CD, Kubernetes, Terraform. The plumbing that holds.",
+    description: "CI/CD, Kubernetes, Terraform. Plumbing done well.",
     icon: "Container",
     size: "small" as const,
   },
   {
     title: "IoT & Real-Time Systems",
-    description: "Sensors to dashboards. Physical world, measured.",
+    description: "Sensor data, dashboards, and live equipment signals.",
     icon: "Cpu",
     size: "small" as const,
   },
   {
     title: "Legacy Modernization",
-    description: "10+ systems pulled into the present, intact.",
+    description: "Older systems moved forward without losing the business logic.",
     icon: "RefreshCw",
     size: "large" as const,
   },
@@ -117,7 +117,7 @@ export const CASE_STUDIES = [
     location: "Finland",
     outcome: "Migrated 50+ microservices from AWS to Azure. Zero downtime.",
     description:
-      "Contributed to resilient, distributed applications used across large-scale enterprise systems. Migrated 50+ microservices from AWS to Azure and Kubernetes.",
+      "Worked on distributed enterprise applications and moved 50+ microservices from AWS to Azure and Kubernetes.",
     tech: [".NET", "Azure", "AWS", "Kubernetes", "Kafka", "Terraform"],
     gradient: "from-[#10b98118] via-[#0c0c0c00] to-[#10b98108]",
     diagram: "relex-migration",
@@ -127,7 +127,7 @@ export const CASE_STUDIES = [
     location: "Finland",
     outcome: "AI object detection and autonomous operations for shipping.",
     description:
-      "Led development of an interfacing layer for Intelligent Asset Management and Remote/Autonomous operations in shipping, integrating sensor data, AI object detection, and video streaming.",
+      "Led the interface layer for Intelligent Asset Management and remote/autonomous shipping. The work tied together sensor data, AI object detection, and video streams.",
     tech: ["C++", "Unity", "gRPC", "LiDAR", "AI"],
     gradient: "from-[#0d2318] via-[#0c0c0c00] to-[#161616]",
     diagram: "rolls-royce-sensors",
@@ -137,7 +137,7 @@ export const CASE_STUDIES = [
     location: "Finland",
     outcome: "Predictive maintenance dashboards for an AGV fleet.",
     description:
-      "Built an IoT dashboard for AGVs with real-time telemetry and predictive maintenance — surfacing faults before they cause downtime and feeding service scheduling directly from live equipment signals.",
+      "Built an IoT dashboard for AGVs with live telemetry and predictive maintenance. Faults appeared early enough to plan service before downtime.",
     tech: [".NET", "Azure", "Azure ML", "CosmosDB", "IoT"],
     gradient: "from-[#1a1a2a] via-[#0c0c0c00] to-[#0d2318]",
     diagram: "rocla-iot",
@@ -147,7 +147,7 @@ export const CASE_STUDIES = [
     location: "Finland",
     outcome: "IoT lifecycle tracking from smart buildings to consumer packaging.",
     description:
-      "Developed software for tracking the full lifecycle of wood-based buildings, from production to IoT-enabled performance monitoring. Built IoT solution covering consumer goods from production and logistics to consumption and recycling.",
+      "Developed lifecycle tracking for wood-based buildings, from production to IoT performance monitoring. Also built IoT software for consumer goods, covering production, logistics, use, and recycling.",
     tech: ["React", ".NET", "IoT", "Azure"],
     gradient: "from-[#10b98112] via-[#161616] to-[#1e1e2e]",
     diagram: "stora-enso-lifecycle",
@@ -157,7 +157,7 @@ export const CASE_STUDIES = [
     location: "Finland",
     outcome: "Near real-time analytics for Finland's airport ground handling operations.",
     description:
-      "Enabled near real-time analytics across operations to manage large-scale data flows and support data-driven decision-making across the organization.",
+      "Built near real-time analytics for airport ground handling, with large data flows made usable for day-to-day operations.",
     tech: [".NET", "Azure", "Databricks", "Kubernetes", "Terraform"],
     gradient: "from-[#1e1e2e] via-[#0c0c0c00] to-[#10b98108]",
   },
@@ -166,7 +166,7 @@ export const CASE_STUDIES = [
     location: "Finland",
     outcome: "API integration systems for accounting and payments.",
     description:
-      "Developed API integration systems for accounting and payments, enabling seamless financial data flows across the platform.",
+      "Developed API integrations for accounting and payments, keeping financial data moving between the platform and external systems.",
     tech: [".NET", "Angular"],
     gradient: "from-[#161616] via-[#0d2318] to-[#0c0c0c00]",
   },
@@ -175,7 +175,7 @@ export const CASE_STUDIES = [
     location: "Finland",
     outcome: "Domain-specific HTML VR browser for Microsoft HoloLens.",
     description:
-      "Built a domain-specific HTML VR browser for Microsoft HoloLens, enabling immersive visualization for elevator and building solutions.",
+      "Built a domain-specific HTML VR browser for Microsoft HoloLens, used to view elevator and building solutions in 3D.",
     tech: [".NET", "Unity"],
     gradient: "from-[#1e1e2e] via-[#0c0c0c00] to-[#0d1f15]",
   },
@@ -184,7 +184,7 @@ export const CASE_STUDIES = [
     location: "Germany",
     outcome: "Development for the ABB Drive Composer tool.",
     description:
-      "Contributed to the development of the ABB Drive Composer tool, a professional PC tool for commissioning and maintaining ABB drives.",
+      "Worked on ABB Drive Composer, the PC tool used to commission and maintain ABB drives.",
     tech: [".NET"],
     gradient: "from-[#0d2318] via-[#161616] to-[#1a1a2a]",
   },
@@ -213,7 +213,7 @@ export const PROCESS_STEPS = [
   {
     number: "/02",
     title: "Architecture",
-    description: "A blueprint you can stand behind.",
+    description: "A plan detailed enough to build from.",
   },
   {
     number: "/03",
@@ -231,7 +231,7 @@ export const DOCTRINE = [
   {
     numeral: "I",
     title: "Duty",
-    body: "The work is owed. It is finished when the client can stand without us.",
+    body: "The work is owed. It is finished when the client can run it without us.",
   },
   {
     numeral: "II",

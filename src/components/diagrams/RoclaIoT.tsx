@@ -61,7 +61,7 @@ export default function RoclaIoT() {
       </text>
 
       <text x="18" y="215" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="rgba(245,245,247,.35)" letterSpacing="1">
-        // telemetry → faults caught before downtime
+        telemetry to faults caught before downtime
       </text>
     </svg>
   );

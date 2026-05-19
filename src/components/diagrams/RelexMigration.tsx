@@ -44,7 +44,7 @@ export default function RelexMigration() {
         fill="#10b981"
         letterSpacing="1.2"
       >
-        // migrate · zero downtime
+        migrate, zero downtime
       </text>
       <text
         x="199"

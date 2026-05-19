@@ -49,7 +49,7 @@ export default function Capabilities() {
           variants={staggerContainer}
           className="grid auto-rows-[minmax(200px,auto)] grid-cols-1 gap-4 md:grid-cols-4"
         >
-          {CAPABILITIES.map((cap, i) => {
+          {CAPABILITIES.map((cap) => {
             const Icon = ICON_MAP[cap.icon] || Cloud;
             const colSpan =
               cap.size === "large"
