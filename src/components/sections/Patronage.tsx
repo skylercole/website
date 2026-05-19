@@ -11,8 +11,8 @@ export default function Patronage() {
           <span className="font-mono text-xs tracking-widest uppercase text-[var(--accent-gold)]">
             § Patronage
           </span>
-          <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight md:text-3xl">
-            Discipline, off the page.
+          <h2 className="mt-3 font-heading text-xl font-bold tracking-tight md:text-2xl">
+            Giving back to the next generation.
           </h2>
           <div className="mt-6 flex items-center gap-4">
             <span className="h-px flex-1 bg-border-subtle" />
@@ -33,9 +33,6 @@ export default function Patronage() {
               {PATRONAGE.club}
             </a>
             .
-          </p>
-          <p className="mt-3 font-mono text-xs tracking-widest uppercase text-text-tertiary">
-            Giving back to the next generation.
           </p>
         </ScrollReveal>
       </div>

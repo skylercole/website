@@ -111,7 +111,7 @@ html.lenis body {
   animation: marquee-reverse 40s linear infinite;
 }
 
-/* Grid background for hero */
+/* Site-wide grid background */
 .grid-bg {
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.03) 1px,
@@ -119,6 +119,7 @@ html.lenis body {
     ),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
+  background-attachment: fixed;
 }
 
 /* Glassmorphism */

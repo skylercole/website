@@ -86,7 +86,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-bg-base text-text-primary">
+      <body className="grid-bg min-h-screen bg-bg-base text-text-primary">
         <Script
           src="https://gc.zgo.at/count.js"
           strategy="afterInteractive"
