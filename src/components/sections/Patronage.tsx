@@ -12,7 +12,7 @@ export default function Patronage() {
             § Patronage
           </span>
           <h2 className="mt-3 font-heading text-xl font-bold tracking-tight md:text-2xl">
-            Giving back to the next generation.
+            Supporting Finnish judo.
           </h2>
           <div className="mt-6 flex items-center gap-4">
             <span className="h-px flex-1 bg-border-subtle" />

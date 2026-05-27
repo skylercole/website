@@ -28,7 +28,7 @@ export const CAPABILITIES = [
   },
   {
     title: "Cloud Architecture",
-    description: "Cloud migrations and platform work without drama.",
+    description: "Cloud migrations that ship without downtime.",
     icon: "Cloud",
     size: "large" as const,
   },

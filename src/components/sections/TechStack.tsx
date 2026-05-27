@@ -15,7 +15,7 @@ export default function TechStack() {
               § Tech Stack
             </span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight md:text-5xl">
-              Tools of the trade.
+              The stack.
             </h2>
           </div>
         </ScrollReveal>

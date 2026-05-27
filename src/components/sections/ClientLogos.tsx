@@ -13,7 +13,7 @@ export default function ClientLogos() {
       <div className="mx-auto max-w-7xl px-6">
         <ScrollReveal>
           <p className="mb-12 text-center font-heading text-sm tracking-wider text-text-tertiary uppercase">
-            Trusted by industry leaders
+            § Past clients
           </p>
         </ScrollReveal>
       </div>
