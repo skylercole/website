@@ -12,6 +12,7 @@ import Capabilities from "@/components/sections/Capabilities";
 import TechStack from "@/components/sections/TechStack";
 import CaseStudies from "@/components/sections/CaseStudies";
 import ClientLogos from "@/components/sections/ClientLogos";
+import Labs from "@/components/sections/Labs";
 import Contact from "@/components/sections/Contact";
 
 const LenisProvider = dynamic(
@@ -32,6 +33,7 @@ export default function Home() {
         <Capabilities />
         <TechStack />
         <ClientLogos />
+        <Labs />
         <Doctrine />
         <Patronage />
         <Contact />

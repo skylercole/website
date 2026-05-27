@@ -259,8 +259,30 @@ export const NAV_LINKS = [
   { label: "Work", href: "#case-studies" },
   { label: "About", href: "#about" },
   { label: "Capabilities", href: "#capabilities" },
+  { label: "Labs", href: "#labs" },
   { label: "Doctrine", href: "#doctrine" },
   { label: "Contact", href: "#contact" },
+];
+
+export const LABS = [
+  {
+    name: "Barline",
+    tagline: "Barbell form analysis from a phone camera.",
+    url: "https://barline.web.app",
+    logo: "barline.svg",
+    tech: [] as string[],
+    gradient: "from-[#22d3ee14] via-[#0c0c0c00] to-[#22d3ee08]",
+    logoBg: "bg-[#0a1518]",
+  },
+  {
+    name: "Parallel Editions",
+    tagline: "Bilingual classics on Kindle, side-by-side.",
+    url: "https://parallel-editions.web.app",
+    logo: "parallel-editions.svg",
+    tech: [] as string[],
+    gradient: "from-[#b0402014] via-[#0c0c0c00] to-[#faf3e308]",
+    logoBg: "bg-[#1a1410]",
+  },
 ];
 
 export const PATRONAGE = {
