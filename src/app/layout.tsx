@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { SITE } from "@/lib/constants";
+import { BASE_PATH, SITE } from "@/lib/constants";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -22,14 +22,19 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const CANONICAL_HOME = `${SITE.url}${BASE_PATH}/`;
+
 export const metadata: Metadata = {
   title: SITE.title,
   description: SITE.description,
   metadataBase: new URL(SITE.url),
+  alternates: {
+    canonical: CANONICAL_HOME,
+  },
   openGraph: {
     title: SITE.title,
     description: SITE.description,
-    url: SITE.url,
+    url: CANONICAL_HOME,
     siteName: SITE.name,
     locale: "en_US",
     type: "website",

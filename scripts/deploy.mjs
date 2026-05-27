@@ -6,7 +6,7 @@
 
 import FtpDeploy from "ftp-deploy";
 import { readFileSync, existsSync } from "fs";
-import { resolve, dirname } from "path";
+import { posix, resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -41,15 +41,14 @@ if (!existsSync(outDir)) {
   process.exit(1);
 }
 
-const config = {
+const seoRootDir = resolve(rootDir, "seo-root");
+const seoRootRemote = posix.dirname(env.DEPLOY_PATH);
+
+const baseConfig = {
   user: env.DEPLOY_USER,
   password: env.DEPLOY_PASSWORD,
   host: env.DEPLOY_HOST,
   port: parseInt(env.DEPLOY_PORT ?? "21", 10),
-  localRoot: outDir,
-  remoteRoot: env.DEPLOY_PATH,
-  include: ["*", "**/*", ".htaccess"],
-  deleteRemote: true,
   forcePasv: true,
   sftp: false,
   // Explicit FTPS (TLS on port 21) — required by most cPanel hosts
@@ -57,7 +56,21 @@ const config = {
   secureOptions: { rejectUnauthorized: false },
 };
 
-console.log(`\n🚀  Deploying via FTP → ${config.host}${config.remoteRoot}\n`);
+const seoConfig = {
+  ...baseConfig,
+  localRoot: seoRootDir,
+  remoteRoot: seoRootRemote,
+  include: ["robots.txt", "sitemap.xml"],
+  deleteRemote: false,
+};
+
+const siteConfig = {
+  ...baseConfig,
+  localRoot: outDir,
+  remoteRoot: env.DEPLOY_PATH,
+  include: ["*", "**/*", ".htaccess"],
+  deleteRemote: true,
+};
 
 const ftpDeploy = new FtpDeploy();
 let lastPct = -1;
@@ -75,9 +88,18 @@ ftpDeploy.on("upload-error", ({ err }) => {
 });
 
 try {
-  await ftpDeploy.deploy(config);
+  if (existsSync(seoRootDir)) {
+    console.log(`\n🔎  Uploading SEO files → ${baseConfig.host}${seoRootRemote}\n`);
+    lastPct = -1;
+    await ftpDeploy.deploy(seoConfig);
+    console.log("");
+  }
+
+  console.log(`\n🚀  Deploying via FTP → ${baseConfig.host}${siteConfig.remoteRoot}\n`);
+  lastPct = -1;
+  await ftpDeploy.deploy(siteConfig);
   const subfolder = env.DEPLOY_PATH.replace(/.*public_html\/?/, "");
-  const url = subfolder ? `https://${config.host}/${subfolder}/` : `https://${config.host}/`;
+  const url = subfolder ? `https://${baseConfig.host}/${subfolder}/` : `https://${baseConfig.host}/`;
   console.log(`\n\n✅  Deploy complete → ${url}\n`);
 } catch (err) {
   console.error("\n❌  Deploy failed:", err.message);

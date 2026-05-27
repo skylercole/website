@@ -1,4 +1,11 @@
-import { DOCTRINE, SITE } from "@/lib/constants";
+import type { Metadata } from "next";
+import { BASE_PATH, DOCTRINE, SITE } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `${SITE.url}${BASE_PATH}/doctrine/`,
+  },
+};
 
 export default function DoctrinePage() {
   return (
