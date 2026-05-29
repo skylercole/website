@@ -5,6 +5,11 @@ DirectoryIndex index.html index.htm index.php
   RewriteEngine On
   RewriteBase /
 
+  # Force HTTPS + apex host (catches requests landing directly on /portfolio*)
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\.300consulting\.fi$ [NC]
+  RewriteRule ^(.*)$ https://300consulting.fi/portfolio/$1 [R=301,L]
+
   # Serve real files and directories directly (static assets, fonts, images, etc.)
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
