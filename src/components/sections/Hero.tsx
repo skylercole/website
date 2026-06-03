@@ -12,7 +12,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl font-heading text-4xl font-semibold leading-[1.08] tracking-tight md:text-6xl lg:text-7xl"
         >
-          Systems built to outlast their authors.
+          Architecture, cloud, and production code.
         </motion.h1>
 
         <motion.p
@@ -21,7 +21,7 @@ export default function Hero() {
           transition={{ delay: 0.15, duration: 0.5 }}
           className="mt-4 max-w-xl text-lg leading-relaxed text-text-secondary md:text-xl"
         >
-          Architecture, cloud work, and production code from Helsinki.
+          24 years of it, from Helsinki.
         </motion.p>
       </div>
     </section>
