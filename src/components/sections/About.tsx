@@ -6,9 +6,9 @@ import { Award } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 md:py-32">
+    <section id="about" className="py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-16 md:grid-cols-2 md:items-center">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center">
           {/* Pull quote */}
           <motion.div
             initial="hidden"
@@ -16,7 +16,7 @@ export default function About() {
             viewport={{ once: true, margin: "-80px" }}
             variants={slideInLeft}
           >
-            <p className="font-heading text-3xl font-bold leading-snug tracking-tight md:text-4xl lg:text-5xl">
+            <p className="font-heading text-3xl font-semibold leading-snug tracking-tight md:text-4xl lg:text-5xl">
               A developer, first.
               <br />
               <span className="text-accent">
@@ -50,7 +50,7 @@ export default function About() {
                 href="http://eladaus.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent underline-offset-2 hover:underline"
+                className="text-text-primary underline underline-offset-2 decoration-text-tertiary hover:decoration-text-primary"
               >
                 Eladaus
               </a>{" "}
@@ -59,7 +59,7 @@ export default function About() {
                 href="https://techie.fi/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent underline-offset-2 hover:underline"
+                className="text-text-primary underline underline-offset-2 decoration-text-tertiary hover:decoration-text-primary"
               >
                 Techie Solutions
               </a>
@@ -71,7 +71,7 @@ export default function About() {
               variants={fadeInUp}
               className="inline-flex items-center gap-3 rounded-lg border border-border-subtle bg-bg-surface px-4 py-3"
             >
-              <Award className="h-8 w-8 text-accent" />
+              <Award className="h-8 w-8 text-text-tertiary" strokeWidth={1.5} />
               <div>
                 <p className="font-heading text-sm font-semibold text-text-primary">
                   Microsoft Certified

@@ -117,7 +117,7 @@ export const CASE_STUDIES = [
     location: "Finland",
     outcome: "Migrated 50+ microservices from AWS to Azure. Zero downtime.",
     description:
-      "Worked on distributed enterprise applications and moved 50+ microservices from AWS to Azure and Kubernetes.",
+      "Developed distributed enterprise applications and moved 50+ microservices from AWS to Azure and Kubernetes.",
     tech: [".NET", "Azure", "AWS", "Kubernetes", "Kafka", "Terraform"],
     gradient: "from-[#10b98118] via-[#0c0c0c00] to-[#10b98108]",
     diagram: "relex-migration",
@@ -184,7 +184,7 @@ export const CASE_STUDIES = [
     location: "Germany",
     outcome: "Development for the ABB Drive Composer tool.",
     description:
-      "Worked on ABB Drive Composer, the PC tool used to commission and maintain ABB drives.",
+      "Developer work for ABB Drive Composer, the PC tool used to commission and maintain ABB drives.",
     tech: [".NET"],
     gradient: "from-[#0d2318] via-[#161616] to-[#1a1a2a]",
   },

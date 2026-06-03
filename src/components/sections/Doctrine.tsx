@@ -7,16 +7,13 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Doctrine() {
   return (
-    <section id="doctrine" className="py-24 md:py-32">
+    <section id="doctrine" className="py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-6">
         <ScrollReveal>
-          <div className="mb-16">
-            <span className="font-mono text-xs tracking-widest uppercase text-[var(--accent-gold)]">
-              § Doctrine
+          <div className="mb-10">
+            <span className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-gold)]">
+              Doctrine
             </span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight md:text-5xl">
-              What the work is held to.
-            </h2>
             <div className="mt-6 flex items-center gap-4">
               <span className="h-px flex-1 bg-border-subtle" />
               <span className="h-px w-6 bg-[var(--accent-gold)]" />
@@ -39,12 +36,12 @@ export default function Doctrine() {
             >
               <span
                 aria-hidden
-                className="font-heading text-3xl font-bold tabular-nums text-[var(--accent-gold)] md:text-5xl"
+                className="font-heading text-3xl font-semibold tabular-nums text-[var(--accent-gold)] md:text-5xl"
               >
                 {tenet.numeral}.
               </span>
               <div>
-                <h3 className="font-heading text-xl font-bold tracking-tight text-text-primary md:text-2xl">
+                <h3 className="font-heading text-xl font-semibold tracking-tight text-text-primary md:text-2xl">
                   {tenet.title}
                 </h3>
                 <p className="mt-2 text-base leading-relaxed text-text-secondary md:text-lg">

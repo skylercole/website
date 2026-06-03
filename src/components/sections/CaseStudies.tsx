@@ -12,19 +12,15 @@ export default function CaseStudies() {
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
 
   return (
-    <section id="case-studies" className="py-24 md:py-32">
+    <section id="case-studies" className="py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <ScrollReveal>
-          <div className="mb-16">
-            <span className="font-mono text-xs tracking-widest text-accent uppercase">
-              § Case Studies
-            </span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight md:text-5xl">
+          <div className="mb-10">
+            <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-5xl">
               Selected work.
             </h2>
             <p className="mt-4 max-w-xl text-text-secondary">
               Enterprise SaaS, aviation, logistics, IoT, and industrial tools.
-              The common part is delivery.
             </p>
           </div>
         </ScrollReveal>
@@ -42,11 +38,10 @@ export default function CaseStudies() {
             <motion.div
               key={study.client}
               variants={fadeInUp}
-              className={`group relative overflow-hidden rounded-2xl border border-border-subtle bg-gradient-to-br ${study.gradient} bg-bg-surface transition-all duration-500 hover:-translate-y-1 hover:border-border-hover hover:shadow-[0_0_60px_rgba(16,185,129,0.06)]`}
-              data-cursor-hover
+              className="group relative overflow-hidden rounded-xl border border-border-subtle bg-bg-surface transition-colors duration-300 hover:border-border-hover"
             >
               {Diagram && (
-                <div className="relative aspect-[16/9] overflow-hidden border-b border-border-subtle bg-bg-base/60">
+                <div className="relative aspect-[16/9] overflow-hidden border-b border-border-subtle bg-bg-raised/40">
                   <Diagram />
                 </div>
               )}
@@ -58,7 +53,7 @@ export default function CaseStudies() {
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="font-heading text-2xl font-bold text-text-primary">
+                    <h3 className="font-heading text-2xl font-semibold text-text-primary">
                       {study.client}
                     </h3>
                     <div className="mt-1 flex items-center gap-1 text-xs text-text-tertiary">
@@ -70,7 +65,7 @@ export default function CaseStudies() {
                     animate={{ rotate: expandedIdx === i ? 90 : 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <ChevronRight className="h-5 w-5 text-text-tertiary transition-colors group-hover:text-accent" />
+                    <ChevronRight className="h-5 w-5 text-text-tertiary transition-colors group-hover:text-text-primary" />
                   </motion.div>
                 </div>
 
@@ -83,7 +78,7 @@ export default function CaseStudies() {
                   {study.tech.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full border border-border-subtle bg-bg-base/50 px-2.5 py-1 font-mono text-[10px] text-text-tertiary"
+                      className="rounded-full border border-border-subtle bg-bg-base px-2.5 py-1 text-[11px] tracking-wide text-text-tertiary"
                     >
                       {t}
                     </span>

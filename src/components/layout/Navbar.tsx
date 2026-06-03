@@ -22,7 +22,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "glass border-b border-border-subtle"
+          ? "border-b border-border-subtle bg-bg-base/95"
           : "bg-transparent"
       }`}
     >
@@ -30,11 +30,10 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#"
-          className="flex items-center gap-2 font-heading text-xl font-bold tracking-tight text-text-primary"
-          data-cursor-hover
+          className="flex items-center gap-2 font-heading text-xl font-semibold tracking-tight text-text-primary"
         >
-          <span className="text-text-secondary">300</span>
-          <span className="text-accent font-light mx-[1px]">CONSULTING</span>
+          <span className="font-bold">300</span>
+          <span className="font-normal tracking-wide text-text-secondary mx-[1px]">CONSULTING</span>
           {/* Plain img avoids Next.js static-export basePath bug with unoptimized images */}
           <img
             src={`${BASE_PATH}/logo-mark.png`}
@@ -52,15 +51,13 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className="relative font-heading text-sm tracking-wide text-text-secondary transition-colors duration-200 hover:text-text-primary"
-              data-cursor-hover
             >
               {link.label}
             </a>
           ))}
           <a
             href={`mailto:${SITE.email}`}
-            className="rounded-full border border-border-subtle bg-transparent px-5 py-2 font-heading text-sm text-text-primary transition-all duration-300 hover:border-white/20 hover:bg-white/[0.03]"
-            data-cursor-hover
+            className="rounded-full border border-border-subtle bg-transparent px-5 py-2 font-heading text-sm text-text-primary transition-all duration-300 hover:border-text-primary/30 hover:bg-text-primary/[0.04]"
           >
             Email
           </a>
@@ -71,7 +68,6 @@ export default function Navbar() {
           className="md:hidden text-text-primary"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
-          data-cursor-hover
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -84,7 +80,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="glass border-b border-border-subtle md:hidden"
+            className="border-b border-border-subtle bg-bg-base md:hidden"
           >
             <div className="flex flex-col gap-4 px-6 py-6">
               {NAV_LINKS.map((link) => (
@@ -99,7 +95,7 @@ export default function Navbar() {
               ))}
               <a
                 href={`mailto:${SITE.email}`}
-                className="mt-2 inline-block rounded-full border border-border-subtle bg-transparent px-5 py-2 text-center font-heading text-sm text-text-primary transition-all duration-300 hover:border-white/20 hover:bg-white/[0.03]"
+                className="mt-2 inline-block rounded-full border border-border-subtle bg-transparent px-5 py-2 text-center font-heading text-sm text-text-primary transition-all duration-300 hover:border-text-primary/30 hover:bg-text-primary/[0.04]"
                 onClick={() => setMobileOpen(false)}
               >
                 Email

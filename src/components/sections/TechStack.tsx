@@ -7,15 +7,12 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function TechStack() {
   return (
-    <section className="border-y border-border-subtle bg-bg-surface/30 py-24 md:py-32">
+    <section className="border-y border-border-subtle bg-bg-surface/30 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <ScrollReveal>
-          <div className="mb-16">
-            <span className="font-mono text-xs tracking-widest text-accent uppercase">
-              § Tech Stack
-            </span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight md:text-5xl">
-              The stack.
+          <div className="mb-10">
+            <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-5xl">
+              Tech stack
             </h2>
           </div>
         </ScrollReveal>
@@ -31,19 +28,18 @@ export default function TechStack() {
             <motion.div
               key={group.category}
               variants={fadeInUp}
-              className={`group rounded-2xl border border-border-subtle bg-bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-border-hover hover:shadow-[0_0_40px_rgba(16,185,129,0.06)] ${
+              className={`group rounded-xl border border-border-subtle bg-bg-surface p-6 transition-colors duration-300 hover:border-border-hover ${
                 group.featured ? "sm:col-span-2 lg:col-span-2" : ""
               }`}
-              data-cursor-hover
             >
-              <h3 className="mb-4 font-heading text-sm font-semibold tracking-wider text-accent uppercase">
+              <h3 className="mb-4 font-heading text-sm font-semibold uppercase tracking-[0.15em] text-text-secondary">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-border-subtle bg-bg-base px-3 py-1.5 font-mono text-xs text-text-secondary transition-all duration-200 hover:border-white/20 hover:text-text-primary"
+                    className="rounded-full border border-border-subtle bg-bg-base px-3 py-1.5 text-xs text-text-secondary transition-colors duration-200 hover:border-text-primary/20 hover:text-text-primary"
                   >
                     {item}
                   </span>

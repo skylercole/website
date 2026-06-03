@@ -1,6 +1,3 @@
-"use client";
-
-import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
@@ -15,15 +12,9 @@ import ClientLogos from "@/components/sections/ClientLogos";
 import Labs from "@/components/sections/Labs";
 import Contact from "@/components/sections/Contact";
 
-const LenisProvider = dynamic(
-  () => import("@/components/ui/LenisProvider"),
-  { ssr: false }
-);
-
 export default function Home() {
   return (
     <>
-      <LenisProvider />
       <Navbar />
       <main>
         <Hero />

@@ -29,7 +29,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32">
+    <section id="contact" className="py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <ScrollReveal>
           <motion.div
@@ -37,7 +37,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="mx-auto mb-8 h-28 w-28 overflow-hidden rounded-full border border-border-subtle bg-bg-surface shadow-[0_10px_40px_-12px_rgba(0,0,0,0.6)] ring-1 ring-white/[0.04] md:h-32 md:w-32"
+            className="mx-auto mb-8 h-28 w-28 overflow-hidden rounded-full border border-border-subtle bg-bg-surface shadow-[0_10px_30px_-14px_rgba(26,23,20,0.4)] md:h-32 md:w-32"
           >
             {/* Plain img avoids Next.js static-export basePath bug with unoptimized images */}
             <img
@@ -48,10 +48,10 @@ export default function Contact() {
               className="h-full w-full object-cover"
             />
           </motion.div>
-          <span className="font-mono text-xs tracking-widest text-accent uppercase">
-            § Contact
+          <span className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-text-tertiary">
+            Contact
           </span>
-          <h2 className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-6xl">
+          <h2 className="mt-4 font-heading text-4xl font-semibold tracking-tight md:text-6xl">
             Have a project
             <br />
             <span className="text-accent">that has to hold?</span>
@@ -71,23 +71,22 @@ export default function Contact() {
         >
           <button
             onClick={handleCopy}
-            className="group inline-flex items-center gap-3 rounded-full border border-border-subtle bg-bg-surface px-6 py-4 transition-all duration-300 hover:border-accent/30 hover:bg-bg-raised"
-            data-cursor-hover
+            className="group inline-flex items-center gap-3 rounded-full border border-border-subtle bg-bg-surface px-6 py-4 transition-colors duration-300 hover:border-border-hover hover:bg-bg-raised"
           >
-            <span className="font-mono text-lg text-text-primary">
+            <span className="text-lg text-text-primary">
               {SITE.email}
             </span>
             {copied ? (
               <Check className="h-4 w-4 text-accent" />
             ) : (
-              <Copy className="h-4 w-4 text-text-tertiary transition-colors group-hover:text-accent" />
+              <Copy className="h-4 w-4 text-text-tertiary transition-colors group-hover:text-text-primary" />
             )}
           </button>
           {copied && (
             <motion.p
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-2 font-mono text-xs text-accent"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="mt-2 text-xs text-accent"
             >
               Copied.
             </motion.p>
@@ -107,8 +106,7 @@ export default function Contact() {
               href={SITE.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-border-subtle bg-bg-surface text-text-secondary transition-all duration-300 hover:border-accent/30 hover:text-accent"
-              data-cursor-hover
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-border-subtle bg-bg-surface text-text-secondary transition-colors duration-300 hover:border-border-hover hover:text-text-primary"
               aria-label="LinkedIn"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -119,8 +117,7 @@ export default function Contact() {
               href={SITE.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-border-subtle bg-bg-surface text-text-secondary transition-all duration-300 hover:border-accent/30 hover:text-accent"
-              data-cursor-hover
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-border-subtle bg-bg-surface text-text-secondary transition-colors duration-300 hover:border-border-hover hover:text-text-primary"
               aria-label="GitHub"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">

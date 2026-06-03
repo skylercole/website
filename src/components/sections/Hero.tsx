@@ -1,66 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import TextScramble from "@/components/ui/TextScramble";
-import MagneticButton from "@/components/ui/MagneticButton";
-import { ChevronDown } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      {/* Gradient glow */}
-      <div className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-[120px]" />
-
-      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
-        {/* Headline */}
+    <section className="relative flex min-h-[60vh] items-center overflow-hidden pt-20">
+      <div className="mx-auto w-full max-w-5xl px-6">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="font-heading text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl"
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl font-heading text-4xl font-semibold leading-[1.08] tracking-tight md:text-6xl lg:text-7xl"
         >
-          <TextScramble
-            text="Software built for the team that has to run it."
-            speed={25}
-          />
+          Systems built to outlast their authors.
         </motion.h1>
 
-        {/* Subline */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="mx-auto mt-6 max-w-2xl text-lg text-text-secondary md:text-xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.15, duration: 0.5 }}
+          className="mt-4 max-w-xl text-lg leading-relaxed text-text-secondary md:text-xl"
         >
           Architecture, cloud work, and production code from Helsinki.
         </motion.p>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1, duration: 0.6 }}
-          className="mt-10"
-        >
-          <MagneticButton href="#case-studies">See the work</MagneticButton>
-        </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown className="h-6 w-6 text-text-tertiary" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
-
