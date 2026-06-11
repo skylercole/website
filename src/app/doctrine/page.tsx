@@ -1,9 +1,24 @@
 import type { Metadata } from "next";
 import { BASE_PATH, DOCTRINE, SITE } from "@/lib/constants";
 
+const DOCTRINE_URL = `${SITE.url}${BASE_PATH}/doctrine/`;
+const DOCTRINE_TITLE = "Doctrine | 300 Consulting";
+const DOCTRINE_DESCRIPTION =
+  "The five tenets 300 Consulting works by: Duty, Discipline, Craft, Restraint, Finish.";
+
 export const metadata: Metadata = {
+  title: DOCTRINE_TITLE,
+  description: DOCTRINE_DESCRIPTION,
   alternates: {
-    canonical: `${SITE.url}${BASE_PATH}/doctrine/`,
+    canonical: DOCTRINE_URL,
+  },
+  openGraph: {
+    title: DOCTRINE_TITLE,
+    description: DOCTRINE_DESCRIPTION,
+    url: DOCTRINE_URL,
+    siteName: SITE.name,
+    type: "article",
+    images: [`${SITE.url}${BASE_PATH}/og.png`],
   },
 };
 

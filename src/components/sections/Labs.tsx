@@ -44,6 +44,8 @@ export default function Labs() {
                 <img
                   src={`${BASE_PATH}/labs/${project.logo}`}
                   alt={`${project.name} logo`}
+                  loading="lazy"
+                  decoding="async"
                   className="h-1/2 w-auto max-w-[22%] opacity-95 transition-transform duration-500 group-hover:scale-105"
                 />
               </div>

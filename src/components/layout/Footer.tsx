@@ -6,10 +6,12 @@ export default function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 md:flex-row">
         <div className="flex items-center gap-2">
           <img
-            src={`${BASE_PATH}/logo-mark.png`}
+            src={`${BASE_PATH}/logo-mark.webp`}
             alt=""
             width={30}
             height={30}
+            loading="lazy"
+            decoding="async"
             className="h-[30px] w-auto opacity-50"
           />
           <p className="font-heading text-sm text-text-tertiary">

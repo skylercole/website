@@ -17,8 +17,8 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const inputPath = resolve(__dirname, "../public/logo-dark.png");
-const outputPath = resolve(__dirname, "../public/logo-mark.png");
+const inputPath = resolve(__dirname, "../brand/logo-dark.png");
+const outputPath = resolve(__dirname, "../brand/logo-mark.png");
 
 const image = sharp(inputPath).ensureAlpha();
 const { data, info } = await image.raw().toBuffer({ resolveWithObject: true });

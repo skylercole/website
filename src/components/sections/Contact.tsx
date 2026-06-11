@@ -41,10 +41,12 @@ export default function Contact() {
           >
             {/* Plain img avoids Next.js static-export basePath bug with unoptimized images */}
             <img
-              src={`${BASE_PATH}/me.jpeg`}
+              src={`${BASE_PATH}/me.webp`}
               alt="Stanislav Stoyanov-Pitkänen"
               width={128}
               height={128}
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
           </motion.div>

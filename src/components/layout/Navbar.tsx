@@ -36,10 +36,11 @@ export default function Navbar() {
           <span className="font-normal tracking-wide text-text-secondary mx-[1px]">CONSULTING</span>
           {/* Plain img avoids Next.js static-export basePath bug with unoptimized images */}
           <img
-            src={`${BASE_PATH}/logo-mark.png`}
+            src={`${BASE_PATH}/logo-mark.webp`}
             alt="300 Consulting"
             width={42}
             height={42}
+            decoding="async"
             className="ml-2 hidden h-[42px] w-auto opacity-85 md:block"
           />
         </a>
