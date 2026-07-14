@@ -264,24 +264,44 @@ export const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const LABS = [
+export type LabProject = {
+  id: string;
+  name: string;
+  tagline: string;
+  url: string;
+  accent: string;
+  stats?: string[];
+};
+
+export const LABS: LabProject[] = [
   {
-    name: "Barline",
-    tagline: "Barbell form analysis from a phone camera.",
-    url: "https://barline.web.app",
-    logo: "barline.svg",
-    tech: [] as string[],
-    gradient: "from-[#22d3ee14] via-[#0c0c0c00] to-[#22d3ee08]",
-    logoBg: "bg-[#0a1518]",
-  },
-  {
+    id: "parallel-editions",
     name: "Parallel Editions",
     tagline: "Bilingual classics on Kindle, side-by-side.",
     url: "https://parallel-editions.web.app",
-    logo: "parallel-editions.svg",
-    tech: [] as string[],
-    gradient: "from-[#b0402014] via-[#0c0c0c00] to-[#faf3e308]",
-    logoBg: "bg-[#1a1410]",
+    accent: "#b04020",
+    stats: ["40+ classics", "12+ languages", "390+ editions"],
+  },
+  {
+    id: "avatar-mirror",
+    name: "Avatar Mirror",
+    tagline: "Your face, mapped into game character creators.",
+    url: "https://avatarmirror.web.app",
+    accent: "#7c6cff",
+  },
+  {
+    id: "belter-charts",
+    name: "Belter Charts",
+    tagline: "Unofficial Expanse navigator, loved by the Reddit community.",
+    url: "https://belter-charts.pages.dev",
+    accent: "#6ee7b7",
+  },
+  {
+    id: "barline",
+    name: "Barline",
+    tagline: "Barbell form analysis from a phone camera.",
+    url: "https://barline.web.app",
+    accent: "#22d3ee",
   },
 ];
 
