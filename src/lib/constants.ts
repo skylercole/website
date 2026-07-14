@@ -283,13 +283,6 @@ export const LABS: LabProject[] = [
     stats: ["40+ classics", "12+ languages", "390+ editions"],
   },
   {
-    id: "avatar-mirror",
-    name: "Avatar Mirror",
-    tagline: "Your face, mapped into game character creators.",
-    url: "https://avatarmirror.web.app",
-    accent: "#7c6cff",
-  },
-  {
     id: "belter-charts",
     name: "Belter Charts",
     tagline: "Unofficial Expanse navigator, loved by the Reddit community.",
@@ -302,6 +295,13 @@ export const LABS: LabProject[] = [
     tagline: "Barbell form analysis from a phone camera.",
     url: "https://barline.web.app",
     accent: "#22d3ee",
+  },
+  {
+    id: "avatar-mirror",
+    name: "Avatar Mirror",
+    tagline: "Your face, mapped into game character creators.",
+    url: "https://avatarmirror.web.app",
+    accent: "#7c6cff",
   },
 ];
 
