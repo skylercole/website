@@ -280,7 +280,7 @@ export const LABS: LabProject[] = [
     tagline: "Bilingual classics on Kindle, side-by-side.",
     url: "https://parallel-editions.web.app",
     accent: "#b04020",
-    stats: ["40+ classics", "12+ languages", "390+ editions"],
+    stats: ["50+ classics", "13+ languages", "500+ editions"],
   },
   {
     id: "belter-charts",
