@@ -32,7 +32,8 @@ export default function Hero() {
         >
           <span aria-hidden className="block h-px w-6 bg-[var(--accent-gold)]" />
           <p className="mt-4 max-w-xl font-heading text-base leading-relaxed text-text-secondary md:text-lg">
-            In an era where machines can outthink us, my job is to outjudge the machines.
+            Everyone can generate software now. Experience separates the
+            great from the generated.
           </p>
         </motion.div>
       </div>

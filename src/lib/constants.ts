@@ -278,9 +278,16 @@ export const LABS: LabProject[] = [
     id: "parallel-editions",
     name: "Parallel Editions",
     tagline: "Bilingual classics on Kindle, side-by-side.",
-    url: "https://parallel-editions.web.app",
+    url: "https://parallel.pub",
     accent: "#b04020",
-    stats: ["50+ classics", "13+ languages", "500+ editions"],
+    stats: ["65+ classics", "13+ languages", "650+ editions"],
+  },
+  {
+    id: "playable-me",
+    name: "PlayableMe",
+    tagline: "Recreate yourself in the games you play.",
+    url: "https://playableme.com",
+    accent: "#7c6cff",
   },
   {
     id: "belter-charts",
@@ -295,13 +302,6 @@ export const LABS: LabProject[] = [
     tagline: "Barbell form analysis from a phone camera.",
     url: "https://barline.web.app",
     accent: "#22d3ee",
-  },
-  {
-    id: "avatar-mirror",
-    name: "Avatar Mirror",
-    tagline: "Your face, mapped into game character creators.",
-    url: "https://avatarmirror.web.app",
-    accent: "#7c6cff",
   },
 ];
 

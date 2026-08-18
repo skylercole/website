@@ -57,38 +57,38 @@ function LabCardArt({ project }: { project: LabProject }) {
         </div>
       );
 
-    case "avatar-mirror":
+    case "playable-me":
       return (
-        <div className="relative flex h-full items-center justify-center gap-1 overflow-hidden bg-black px-1.5">
-          {[
-            {
-              src: "avatar-mirror-cyberpunk.webp",
-              rotate: "-rotate-2",
-              size: "h-[78%]",
-            },
-            {
-              src: "avatar-mirror-starfield.webp",
-              rotate: "rotate-0",
-              size: "h-[86%]",
-            },
-            {
-              src: "avatar-mirror-fallout.webp",
-              rotate: "rotate-2",
-              size: "h-[78%]",
-            },
-          ].map(({ src, rotate, size }) => (
-            <div
-              key={src}
-              className={`aspect-[2/3] ${size} shrink-0 overflow-hidden rounded-sm bg-black shadow-[0_4px_16px_rgba(0,0,0,0.6)] ring-1 ring-white/10 transition-transform duration-500 group-hover:-translate-y-0.5 ${rotate}`}
-            >
+        <div className="relative h-full overflow-hidden bg-[#080c0d]">
+          <img
+            src={`${base}/playableme-hero.webp`}
+            alt=""
+            aria-hidden
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#080c0d]/60" />
+          <div className="absolute inset-x-0 bottom-0 top-6 flex items-end justify-center pb-3">
+            <div className="relative flex h-[72%] w-[88%] items-end justify-center">
               <img
-                src={`${base}/${src}`}
+                src={`${base}/playableme-cyberpunk.webp`}
                 alt=""
                 aria-hidden
-                className="h-full w-full object-contain"
+                className="absolute bottom-0 left-[4%] z-10 h-[78%] w-[30%] rotate-[-7deg] rounded-sm object-cover shadow-[0_8px_24px_rgba(0,0,0,0.6)] ring-1 ring-white/10 transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-[-9deg]"
+              />
+              <img
+                src={`${base}/playableme-starfield.webp`}
+                alt=""
+                aria-hidden
+                className="relative z-20 h-[88%] w-[34%] rounded-sm object-cover shadow-[0_12px_32px_rgba(0,0,0,0.7)] ring-1 ring-white/10 transition-transform duration-500 group-hover:-translate-y-2"
+              />
+              <img
+                src={`${base}/playableme-fallout.webp`}
+                alt=""
+                aria-hidden
+                className="absolute bottom-0 right-[4%] z-10 h-[78%] w-[30%] rotate-[7deg] rounded-sm object-cover shadow-[0_8px_24px_rgba(0,0,0,0.6)] ring-1 ring-white/10 transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-[9deg]"
               />
             </div>
-          ))}
+          </div>
         </div>
       );
 
