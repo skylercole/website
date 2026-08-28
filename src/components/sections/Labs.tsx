@@ -116,6 +116,18 @@ function LabCardArt({ project }: { project: LabProject }) {
         </div>
       );
 
+    case "callvaders":
+      return (
+        <div className="flex h-full items-center justify-center overflow-hidden bg-[#0b0d1a] p-1">
+          <img
+            src={`${base}/callvaders-hero.webp`}
+            alt=""
+            aria-hidden
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-[1.02]"
+          />
+        </div>
+      );
+
     default:
       return null;
   }
@@ -144,14 +156,18 @@ export default function Labs() {
           variants={staggerContainer}
           className="grid grid-cols-2 gap-3 md:gap-4"
         >
-          {LABS.map((project) => (
+          {LABS.map((project, index) => (
             <motion.a
               key={project.id}
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
               variants={fadeInUp}
-              className="group relative flex flex-col overflow-hidden rounded-lg border border-border-subtle bg-bg-surface transition-all duration-300 hover:border-border-hover hover:shadow-[0_8px_32px_rgba(24,23,26,0.08)]"
+              className={`group relative flex flex-col overflow-hidden rounded-lg border border-border-subtle bg-bg-surface transition-all duration-300 hover:border-border-hover hover:shadow-[0_8px_32px_rgba(24,23,26,0.08)] ${
+                LABS.length % 2 === 1 && index === LABS.length - 1
+                  ? "col-span-2 w-[calc(50%-0.375rem)] justify-self-center md:w-[calc(50%-0.5rem)]"
+                  : ""
+              }`}
             >
               <div className="relative aspect-[4/3] overflow-hidden border-b border-border-subtle">
                 <LabCardArt project={project} />

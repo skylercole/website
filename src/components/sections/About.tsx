@@ -20,7 +20,7 @@ export default function About() {
               A developer, first.
               <br />
               <span className="text-accent">
-                24 years close to production.
+                25 years close to production.
               </span>
             </p>
           </motion.div>
@@ -39,13 +39,11 @@ export default function About() {
             </p>
             <p className="text-lg leading-relaxed text-text-secondary">
               The clients range from early-stage companies to global enterprises.
-              The job stays the same: make the system work, and make it
-              maintainable.
             </p>
 
             <p className="text-lg leading-relaxed text-text-secondary">
-              When a project needs more hands, I bring in people I trust and
-              have worked with before, including{" "}
+              When your project needs more hands, you can bring in trusted people 
+             300 Consulting has worked with before, including{" "}
               <a
                 href="http://eladaus.com/"
                 target="_blank"
@@ -63,7 +61,7 @@ export default function About() {
               >
                 Techie Solutions
               </a>
-              . The accountability stays in one place.
+              .
             </p>
 
             {/* Certification badge */}

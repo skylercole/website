@@ -21,21 +21,8 @@ export default function Hero() {
           transition={{ delay: 0.15, duration: 0.5 }}
           className="mt-4 max-w-xl text-lg leading-relaxed text-text-secondary md:text-xl"
         >
-          24 years of it, from Helsinki.
+          25 years of it, from Helsinki.
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          className="mt-10"
-        >
-          <span aria-hidden className="block h-px w-6 bg-[var(--accent-gold)]" />
-          <p className="mt-4 max-w-xl font-heading text-base leading-relaxed text-text-secondary md:text-lg">
-            Everyone can generate software now. Experience separates the
-            great from the generated.
-          </p>
-        </motion.div>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ export const SITE = {
   name: "300 Consulting",
   title: "300 Consulting | Solution Architecture & Cloud Engineering",
   description:
-    "Solution architecture and cloud engineering from Helsinki. 24+ years building systems that stay useful.",
+    "Solution architecture and cloud engineering from Helsinki. 25+ years building systems that stay useful.",
   url: "https://300consulting.fi",
   email: "stanislav.sp@300consulting.fi",
   linkedin: "https://www.linkedin.com/in/stanislav-sp/",
@@ -13,7 +13,7 @@ export const SITE = {
 };
 
 export const METRICS = [
-  { prefix: "/01", value: 24, suffix: "+", label: "Years of Engineering" },
+  { prefix: "/01", value: 25, suffix: "+", label: "Years of Engineering" },
   { prefix: "/02", value: 15, suffix: "+", label: "Enterprise Clients" },
   { prefix: "/03", value: 50, suffix: "+", label: "Microservices Migrated" },
   { prefix: "/04", value: 3, suffix: "", label: "Fortune 100 Companies" },
@@ -70,6 +70,15 @@ export const CAPABILITIES = [
   },
 ];
 
+export const CREDO =
+  "Everyone can generate software now. Experience separates the great from the generated.";
+
+export const EXPERIENCE = [
+  "Design patterns",
+  "Systems thinking",
+  "Domain modeling",
+];
+
 export const TECH_STACK = [
   {
     category: "Languages",
@@ -82,7 +91,7 @@ export const TECH_STACK = [
   },
   {
     category: "Frontend",
-    items: ["React", "Vue", "Angular", "Blazor", "Flutter", "Avalonia", "Next.js"],
+    items: ["React", "Vue", "Angular", "Blazor", "Flutter", "Avalonia", "Next.js", "Three.js"],
   },
   {
     category: "Data",
@@ -94,7 +103,7 @@ export const TECH_STACK = [
   },
   {
     category: "AI / ML",
-    items: ["PyTorch", "TensorFlow", "Azure ML", "RAG", "ML.NET", "Scikit-learn", "Face-recognition", "Ollama"],
+    items: ["PyTorch", "TensorFlow", "Azure ML", "RAG", "ML.NET", "Scikit-learn", "Face-recognition", "MediaPipe", "Ollama"],
   },
   {
     category: "Messaging",
@@ -302,6 +311,13 @@ export const LABS: LabProject[] = [
     tagline: "Barbell form analysis from a phone camera.",
     url: "https://barline.web.app",
     accent: "#22d3ee",
+  },
+  {
+    id: "callvaders",
+    name: "CallVaders",
+    tagline: "Your video call becomes the enemy fleet.",
+    url: "https://callvaders.web.app",
+    accent: "#3b8d6a",
   },
 ];
 
