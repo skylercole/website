@@ -315,7 +315,7 @@ export const LABS: LabProject[] = [
   {
     id: "callvaders",
     name: "CallVaders",
-    tagline: "Your video call becomes the enemy fleet.",
+    tagline: "A fun weekend project using MediaPipe, turning your video call into a Space Invaders - type game.",
     url: "https://callvaders.web.app",
     accent: "#3b8d6a",
   },
