@@ -1,22 +1,17 @@
-# Prefer index.html over index.php (overrides WordPress default)
-DirectoryIndex index.html index.htm index.php
+# Deployed to /public_html/portfolio and served at / by the web root
+# .htaccess (webroot/.htaccess), which rewrites every request in here.
+DirectoryIndex index.html
+
+# Real 404s for unknown URLs (no soft-404 fallback to the home page)
+ErrorDocument 404 /portfolio/404.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
 
-  # Force HTTPS + apex host (catches requests landing directly on /portfolio*)
-  RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} ^www\.300consulting\.fi$ [NC]
-  RewriteRule ^(.*)$ https://300consulting.fi/portfolio/$1 [R=301,L]
-
-  # Serve real files and directories directly (static assets, fonts, images, etc.)
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
-  RewriteRule ^ - [L]
-
-  # Fallback: send everything else to index.html
-  RewriteRule ^ index.html [L]
+  # Old /portfolio/ links → clean URLs. THE_REQUEST is the browser's original
+  # request line, so the internal rewrite from / never matches this rule.
+  RewriteCond %{THE_REQUEST} \s/portfolio(?:/(\S*))?\s
+  RewriteRule ^ https://300consulting.fi/%1 [R=301,L,NE]
 </IfModule>
 
 # Cache static Next.js assets aggressively (they use content hashes)

@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/animations";
-import { SITE, BASE_PATH } from "@/lib/constants";
-import { Copy, Check, MapPin } from "lucide-react";
+import { SITE } from "@/lib/constants";
+import { Copy, Check, MapPin, Mail, ArrowUpRight } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Contact() {
@@ -41,7 +41,7 @@ export default function Contact() {
           >
             {/* Plain img avoids Next.js static-export basePath bug with unoptimized images */}
             <img
-              src={`${BASE_PATH}/me.webp`}
+              src="/me.webp"
               alt="Stanislav Stoyanov-Pitkänen"
               width={128}
               height={128}
@@ -61,7 +61,7 @@ export default function Contact() {
           </p>
         </ScrollReveal>
 
-        {/* Email with copy */}
+        {/* Two actions, then the address with copy */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -69,17 +69,34 @@ export default function Contact() {
           variants={fadeInUp}
           className="mt-10"
         >
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={`mailto:${SITE.email}`}
+              className="inline-flex items-center gap-2 rounded-full border border-text-primary bg-text-primary px-6 py-3 font-heading text-base text-bg-base transition-colors duration-300 hover:bg-text-primary/85"
+            >
+              <Mail className="h-4 w-4" />
+              Email Stanislav
+            </a>
+            <a
+              href={SITE.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border-subtle px-6 py-3 font-heading text-base text-text-primary transition-all duration-300 hover:border-text-primary/30 hover:bg-text-primary/[0.04]"
+            >
+              Message on LinkedIn
+              <ArrowUpRight className="h-4 w-4 text-text-tertiary" />
+            </a>
+          </div>
+
           <button
             onClick={handleCopy}
-            className="group inline-flex items-center gap-3 rounded-full border border-border-subtle bg-bg-surface px-6 py-4 transition-colors duration-300 hover:border-border-hover hover:bg-bg-raised"
+            className="group mt-6 inline-flex items-center gap-2 text-sm text-text-secondary transition-colors duration-300 hover:text-text-primary"
           >
-            <span className="text-lg text-text-primary">
-              {SITE.email}
-            </span>
+            <span>{SITE.email}</span>
             {copied ? (
-              <Check className="h-4 w-4 text-accent" />
+              <Check className="h-3.5 w-3.5 text-accent" />
             ) : (
-              <Copy className="h-4 w-4 text-text-tertiary transition-colors group-hover:text-text-primary" />
+              <Copy className="h-3.5 w-3.5 text-text-tertiary transition-colors group-hover:text-text-primary" />
             )}
           </button>
           {copied && (

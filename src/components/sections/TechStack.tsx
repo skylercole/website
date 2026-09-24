@@ -22,37 +22,60 @@ export default function TechStack() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-4 lg:grid-cols-[2fr_3fr]"
         >
-          {TECH_STACK.map((group) => (
-            <motion.div
-              key={group.category}
-              variants={fadeInUp}
-              className={`group rounded-xl border border-border-subtle bg-bg-surface p-6 transition-colors duration-300 hover:border-border-hover ${
-                group.featured ? "sm:col-span-2 lg:col-span-2" : ""
-              }`}
-            >
-              <h3 className="mb-4 font-heading text-sm font-semibold uppercase tracking-[0.15em] text-text-secondary">
-                {group.category}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-border-subtle bg-bg-base px-3 py-1.5 text-xs text-text-secondary transition-colors duration-200 hover:border-text-primary/20 hover:text-text-primary"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-              {group.featured && (
-                <div className="mt-4 flex items-center gap-2 text-xs text-text-tertiary">
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-                  Microsoft Certified Azure Solutions Architect Expert
+          <motion.div
+            variants={fadeInUp}
+            className="rounded-xl border border-border-subtle bg-bg-surface p-6 md:p-8"
+          >
+            <h3 className="mb-5 font-heading text-sm font-semibold uppercase tracking-[0.15em] text-text-secondary">
+              Core
+            </h3>
+            <ul className="flex flex-wrap gap-2">
+              {TECH_STACK.core.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-border-subtle bg-bg-base px-4 py-2 font-heading text-base text-text-primary"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6 flex items-center gap-2 text-xs text-text-tertiary">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
+              Microsoft Certified Azure Solutions Architect Expert
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={fadeInUp}
+            className="rounded-xl border border-border-subtle p-6 md:p-8"
+          >
+            <h3 className="mb-5 font-heading text-sm font-semibold uppercase tracking-[0.15em] text-text-tertiary">
+              Also shipped with
+            </h3>
+            <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2.5 text-sm">
+              {TECH_STACK.also.map((group) => (
+                <div key={group.category} className="contents">
+                  <dt className="text-text-tertiary">{group.category}</dt>
+                  <dd>
+                    <ul className="flex flex-wrap gap-x-2 text-text-secondary">
+                      {group.items.map((item, i) => (
+                        <li key={item} className="flex items-center gap-2">
+                          {item}
+                          {i < group.items.length - 1 && (
+                            <span aria-hidden className="text-text-tertiary">
+                              ·
+                            </span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </dd>
                 </div>
-              )}
-            </motion.div>
-          ))}
+              ))}
+            </dl>
+          </motion.div>
         </motion.div>
       </div>
     </section>

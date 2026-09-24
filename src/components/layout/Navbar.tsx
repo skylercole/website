@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { NAV_LINKS, SITE, BASE_PATH } from "@/lib/constants";
+import { NAV_LINKS, SITE } from "@/lib/constants";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -36,7 +36,7 @@ export default function Navbar() {
           <span className="font-normal tracking-wide text-text-secondary mx-[1px]">CONSULTING</span>
           {/* Plain img avoids Next.js static-export basePath bug with unoptimized images */}
           <img
-            src={`${BASE_PATH}/logo-mark.webp`}
+            src="/logo-mark.webp"
             alt="300 Consulting"
             width={42}
             height={42}

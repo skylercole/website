@@ -1,5 +1,3 @@
-export const BASE_PATH = "/portfolio";
-
 export const SITE = {
   name: "300 Consulting",
   title: "300 Consulting | Solution Architecture & Cloud Engineering",
@@ -19,56 +17,34 @@ export const METRICS = [
   { prefix: "/04", value: 3, suffix: "", label: "Fortune 100 Companies" },
 ];
 
-export const CAPABILITIES = [
-  {
-    title: "Full-Stack Development",
-    description: "One person accountable from design to release.",
-    icon: "Layers",
-    size: "medium" as const,
-  },
-  {
-    title: "Cloud Architecture",
-    description: "Cloud migrations that ship without downtime.",
-    icon: "Cloud",
-    size: "large" as const,
-  },
-  {
-    title: "Distributed Systems",
-    description: "50+ microservices built or migrated.",
-    icon: "Network",
-    size: "small" as const,
-  },
-  {
-    title: "Solution Design",
-    description: "Architecture that can become code.",
-    icon: "PenTool",
-    size: "small" as const,
-  },
-  {
-    title: "AI / ML Integration",
-    description: "ML features that make it to production.",
-    icon: "Brain",
-    size: "medium" as const,
-  },
-  {
-    title: "DevOps & Infrastructure",
-    description: "CI/CD, Kubernetes, Terraform. Plumbing done well.",
-    icon: "Container",
-    size: "small" as const,
-  },
-  {
-    title: "IoT & Real-Time Systems",
-    description: "Sensor data, dashboards, and live equipment signals.",
-    icon: "Cpu",
-    size: "small" as const,
-  },
-  {
-    title: "Legacy Modernization",
-    description: "Older systems moved forward without losing the business logic.",
-    icon: "RefreshCw",
-    size: "large" as const,
-  },
-];
+export const CAPABILITIES = {
+  primary: [
+    {
+      title: "Architecture & complex systems",
+      description: "Architecture that can become code.",
+      detail: ["Solution design", "Distributed systems", "50+ microservices"],
+      icon: "PenTool",
+    },
+    {
+      title: "Cloud & modernization",
+      description:
+        "Cloud migrations that ship without downtime. Older systems moved forward without losing the business logic.",
+      detail: ["Azure", "AWS", "Kubernetes", "Terraform"],
+      icon: "Cloud",
+    },
+    {
+      title: "Hands-on engineering",
+      description: "One person accountable from design to release.",
+      detail: ["Back end", "Front end", "CI/CD"],
+      icon: "Layers",
+    },
+  ],
+  supporting: [
+    "AI / ML integration",
+    "IoT & real-time systems",
+    "DevOps & infrastructure",
+  ],
+};
 
 export const CREDO =
   "Everyone can generate software now. Experience separates the great from the generated.";
@@ -79,37 +55,30 @@ export const EXPERIENCE = [
   "Domain modeling",
 ];
 
-export const TECH_STACK = [
-  {
-    category: "Languages",
-    items: ["C#", "Python", "TypeScript", "JavaScript", "C++"],
-  },
-  {
-    category: "Cloud",
-    items: ["Azure", "AWS", "GCP"],
-    featured: true,
-  },
-  {
-    category: "Frontend",
-    items: ["React", "Vue", "Angular", "Blazor", "Flutter", "Avalonia", "Next.js", "Three.js"],
-  },
-  {
-    category: "Data",
-    items: ["SQL Server", "PostgreSQL", "MongoDB", "CosmosDB", "Firebase"],
-  },
-  {
-    category: "DevOps",
-    items: ["Kubernetes", "Docker", "Terraform", "GitHub Actions", "Azure DevOps", "Backstage"],
-  },
-  {
-    category: "AI / ML",
-    items: ["PyTorch", "TensorFlow", "Azure ML", "RAG", "ML.NET", "Scikit-learn", "Face-recognition", "MediaPipe", "Ollama"],
-  },
-  {
-    category: "Messaging",
-    items: ["Kafka", "RabbitMQ"],
-  },
-];
+export const TECH_STACK = {
+  core: ["C# / .NET", "Azure", "Kubernetes", "Terraform", "TypeScript"],
+  also: [
+    { category: "Languages", items: ["Python", "JavaScript", "C++"] },
+    { category: "Cloud", items: ["AWS", "GCP"] },
+    {
+      category: "Frontend",
+      items: ["React", "Vue", "Angular", "Blazor", "Flutter", "Avalonia", "Next.js", "Three.js"],
+    },
+    {
+      category: "Data",
+      items: ["SQL Server", "PostgreSQL", "MongoDB", "CosmosDB", "Firebase"],
+    },
+    {
+      category: "DevOps",
+      items: ["Docker", "GitHub Actions", "Azure DevOps", "Backstage"],
+    },
+    {
+      category: "AI / ML",
+      items: ["PyTorch", "TensorFlow", "Azure ML", "RAG", "ML.NET", "Scikit-learn", "Face-recognition", "MediaPipe", "Ollama"],
+    },
+    { category: "Messaging", items: ["Kafka", "RabbitMQ"] },
+  ],
+};
 
 export const CASE_STUDIES = [
   // {
@@ -144,7 +113,8 @@ export const CASE_STUDIES = [
   {
     client: "Rocla / Mitsubishi",
     location: "Finland",
-    outcome: "Predictive maintenance dashboards for an AGV fleet.",
+    outcome:
+      "Predictive maintenance for an AGV fleet. Faults caught before downtime, service needs turned into sales leads.",
     description:
       "Built an IoT dashboard for AGVs with live telemetry and predictive maintenance. Faults appeared early enough to plan service before downtime.",
     tech: [".NET", "Azure", "Azure ML", "CosmosDB", "IoT"],
@@ -164,7 +134,8 @@ export const CASE_STUDIES = [
   {
     client: "Airpro / Finavia",
     location: "Finland",
-    outcome: "Near real-time analytics for Finland's airport ground handling operations.",
+    outcome:
+      "Near real-time analytics for Finland's airport ground handling, used in daily operational decisions.",
     description:
       "Built near real-time analytics for airport ground handling, with large data flows made usable for day-to-day operations.",
     tech: [".NET", "Azure", "Databricks", "Kubernetes", "Terraform"],
@@ -239,26 +210,21 @@ export const PROCESS_STEPS = [
 export const DOCTRINE = [
   {
     numeral: "I",
-    title: "Duty",
-    body: "The work is owed. It is finished when the client can run it without us.",
+    title: "Discipline",
+    body: "Commitments are explicit. Risks surface early.",
   },
   {
     numeral: "II",
-    title: "Discipline",
-    body: "Schedules are kept. Estimates are held. Effort does not waver.",
-  },
-  {
-    numeral: "III",
     title: "Craft",
     body: "Code is written to be read. Systems are built for those who will run them.",
   },
   {
-    numeral: "IV",
+    numeral: "III",
     title: "Restraint",
     body: "The plainest design that bears the load. Complexity is earned.",
   },
   {
-    numeral: "V",
+    numeral: "IV",
     title: "Finish",
     body: "The work is not done until it stands without the hand that made it.",
   },
@@ -280,6 +246,7 @@ export type LabProject = {
   url: string;
   accent: string;
   stats?: string[];
+  featured?: boolean;
 };
 
 export const LABS: LabProject[] = [
@@ -289,7 +256,8 @@ export const LABS: LabProject[] = [
     tagline: "Bilingual classics on Kindle, side-by-side.",
     url: "https://parallel.pub",
     accent: "#b04020",
-    stats: ["65+ classics", "13+ languages", "650+ editions"],
+    stats: ["100+ classics", "13+ languages", "970+ editions"],
+    featured: true,
   },
   {
     id: "playable-me",

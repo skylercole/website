@@ -1,0 +1,36 @@
+# Web root (/public_html). Uploaded by scripts/deploy.mjs.
+# The Next.js site is deployed to /public_html/portfolio and served at / by
+# the internal rewrite below. The old WordPress install still sits on disk
+# but is unreachable. Pre-move version kept in .htaccess.pre-move (rollback).
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force HTTPS + apex host
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^(.*)$ https://300consulting.fi/$1 [R=301,L]
+
+  # AutoSSL domain validation must stay reachable
+  RewriteRule ^\.well-known/ - [L]
+
+  # Add the trailing slash in one hop (mod_dir would expose /portfolio/)
+  RewriteCond %{DOCUMENT_ROOT}/portfolio/$1 -d
+  RewriteRule ^(.*[^/])$ https://300consulting.fi/$1/ [R=301,L]
+
+  # Everything else is served from /portfolio/
+  RewriteCond %{REQUEST_URI} !^/portfolio/
+  RewriteRule ^(.*)$ /portfolio/$1 [L]
+</IfModule>
+
+# Defense in depth: never serve WordPress credentials
+<Files wp-config.php>
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</Files>

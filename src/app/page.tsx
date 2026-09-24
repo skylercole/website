@@ -28,8 +28,8 @@ export default function Home() {
         <ClientLogos />
         <Labs />
         <Doctrine />
-        <Patronage />
         <Contact />
+        <Patronage />
       </main>
       <Footer />
     </>

@@ -41,8 +41,9 @@ if (!existsSync(outDir)) {
   process.exit(1);
 }
 
-const seoRootDir = resolve(rootDir, "seo-root");
-const seoRootRemote = posix.dirname(env.DEPLOY_PATH);
+// Web root .htaccess serves the site (deployed to DEPLOY_PATH) at /
+const webRootDir = resolve(rootDir, "webroot");
+const webRootRemote = posix.dirname(env.DEPLOY_PATH);
 
 const baseConfig = {
   user: env.DEPLOY_USER,
@@ -56,11 +57,11 @@ const baseConfig = {
   secureOptions: { rejectUnauthorized: false },
 };
 
-const seoConfig = {
+const webRootConfig = {
   ...baseConfig,
-  localRoot: seoRootDir,
-  remoteRoot: seoRootRemote,
-  include: ["robots.txt", "sitemap.xml"],
+  localRoot: webRootDir,
+  remoteRoot: webRootRemote,
+  include: [".htaccess"],
   deleteRemote: false,
 };
 
@@ -88,19 +89,17 @@ ftpDeploy.on("upload-error", ({ err }) => {
 });
 
 try {
-  if (existsSync(seoRootDir)) {
-    console.log(`\n🔎  Uploading SEO files → ${baseConfig.host}${seoRootRemote}\n`);
+  if (existsSync(webRootDir)) {
+    console.log(`\n🔎  Uploading web root .htaccess → ${baseConfig.host}${webRootRemote}\n`);
     lastPct = -1;
-    await ftpDeploy.deploy(seoConfig);
+    await ftpDeploy.deploy(webRootConfig);
     console.log("");
   }
 
   console.log(`\n🚀  Deploying via FTP → ${baseConfig.host}${siteConfig.remoteRoot}\n`);
   lastPct = -1;
   await ftpDeploy.deploy(siteConfig);
-  const subfolder = env.DEPLOY_PATH.replace(/.*public_html\/?/, "");
-  const url = subfolder ? `https://${baseConfig.host}/${subfolder}/` : `https://${baseConfig.host}/`;
-  console.log(`\n\n✅  Deploy complete → ${url}\n`);
+  console.log(`\n\n✅  Deploy complete → https://300consulting.fi/\n`);
 } catch (err) {
   console.error("\n❌  Deploy failed:", err.message);
   process.exit(1);

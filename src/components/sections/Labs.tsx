@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LABS, BASE_PATH, type LabProject } from "@/lib/constants";
+import { LABS, type LabProject } from "@/lib/constants";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { ArrowUpRight } from "lucide-react";
 
 function LabCardArt({ project }: { project: LabProject }) {
-  const base = `${BASE_PATH}/labs`;
+  const base = "/labs";
 
   switch (project.id) {
     case "parallel-editions":
@@ -42,18 +42,6 @@ function LabCardArt({ project }: { project: LabProject }) {
               />
             </div>
           </div>
-          {project.stats && (
-            <div className="absolute left-2.5 top-2.5 flex flex-wrap gap-1">
-              {project.stats.map((stat) => (
-                <span
-                  key={stat}
-                  className="rounded-full bg-[#18171a]/85 px-2 py-0.5 text-[9px] font-medium tracking-wide text-white/90"
-                >
-                  {stat}
-                </span>
-              ))}
-            </div>
-          )}
         </div>
       );
 
@@ -156,46 +144,92 @@ export default function Labs() {
           variants={staggerContainer}
           className="grid grid-cols-2 gap-3 md:gap-4"
         >
-          {LABS.map((project, index) => (
-            <motion.a
-              key={project.id}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={fadeInUp}
-              className={`group relative flex flex-col overflow-hidden rounded-lg border border-border-subtle bg-bg-surface transition-all duration-300 hover:border-border-hover hover:shadow-[0_8px_32px_rgba(24,23,26,0.08)] ${
-                LABS.length % 2 === 1 && index === LABS.length - 1
-                  ? "col-span-2 w-[calc(50%-0.375rem)] justify-self-center md:w-[calc(50%-0.5rem)]"
-                  : ""
-              }`}
-            >
-              <div className="relative aspect-[4/3] overflow-hidden border-b border-border-subtle">
-                <LabCardArt project={project} />
-              </div>
-
-              <div className="flex flex-1 flex-col p-3 md:p-4">
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="font-heading text-sm font-semibold leading-snug text-text-primary md:text-base">
-                    {project.name}
-                  </h3>
-                  <ArrowUpRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-text-tertiary transition-colors group-hover:text-text-primary" />
+          {LABS.map((project) =>
+            project.featured ? (
+              <motion.a
+                key={project.id}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={fadeInUp}
+                className="group relative col-span-2 flex flex-col overflow-hidden rounded-lg border border-border-subtle bg-bg-surface transition-all duration-300 hover:border-border-hover hover:shadow-[0_8px_32px_rgba(24,23,26,0.08)] md:flex-row"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden border-b border-border-subtle md:w-1/2 md:border-r md:border-b-0">
+                  <LabCardArt project={project} />
                 </div>
 
-                <p className="mt-1.5 line-clamp-2 text-[11px] leading-relaxed text-text-secondary md:text-xs">
-                  {project.tagline}
-                </p>
+                <div className="flex flex-1 flex-col p-5 md:p-8">
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="font-heading text-xl font-semibold leading-snug text-text-primary md:text-2xl">
+                      {project.name}
+                    </h3>
+                    <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-text-tertiary transition-colors group-hover:text-text-primary" />
+                  </div>
 
-                <div className="mt-auto flex items-center gap-1 pt-2.5 text-[10px] uppercase tracking-[0.14em] text-text-tertiary transition-colors group-hover:text-text-primary">
-                  <span
-                    className="mr-1 inline-block h-1.5 w-1.5 rounded-full"
-                    style={{ backgroundColor: project.accent }}
-                  />
-                  View live
-                  <ArrowUpRight className="h-2.5 w-2.5" />
+                  <p className="mt-2 text-sm leading-relaxed text-text-secondary md:text-base">
+                    {project.tagline}
+                  </p>
+
+                  {project.stats && (
+                    <ul className="mt-5 flex flex-wrap gap-2">
+                      {project.stats.map((stat) => (
+                        <li
+                          key={stat}
+                          className="rounded-full border border-border-subtle bg-bg-base px-3 py-1 text-xs text-text-secondary"
+                        >
+                          {stat}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <div className="mt-auto flex items-center gap-1 pt-6 text-[11px] uppercase tracking-[0.14em] text-text-tertiary transition-colors group-hover:text-text-primary">
+                    <span
+                      className="mr-1 inline-block h-1.5 w-1.5 rounded-full"
+                      style={{ backgroundColor: project.accent }}
+                    />
+                    View live
+                    <ArrowUpRight className="h-3 w-3" />
+                  </div>
                 </div>
-              </div>
-            </motion.a>
-          ))}
+              </motion.a>
+            ) : (
+              <motion.a
+                key={project.id}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={fadeInUp}
+                className="group relative flex flex-col overflow-hidden rounded-lg border border-border-subtle bg-bg-surface transition-all duration-300 hover:border-border-hover hover:shadow-[0_8px_32px_rgba(24,23,26,0.08)]"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden border-b border-border-subtle">
+                  <LabCardArt project={project} />
+                </div>
+
+                <div className="flex flex-1 flex-col p-3 md:p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="font-heading text-sm font-semibold leading-snug text-text-primary md:text-base">
+                      {project.name}
+                    </h3>
+                    <ArrowUpRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-text-tertiary transition-colors group-hover:text-text-primary" />
+                  </div>
+
+                  <p className="mt-1.5 line-clamp-2 text-[11px] leading-relaxed text-text-secondary md:text-xs">
+                    {project.tagline}
+                  </p>
+
+                  <div className="mt-auto flex items-center gap-1 pt-2.5 text-[10px] uppercase tracking-[0.14em] text-text-tertiary transition-colors group-hover:text-text-primary">
+                    <span
+                      className="mr-1 inline-block h-1.5 w-1.5 rounded-full"
+                      style={{ backgroundColor: project.accent }}
+                    />
+                    View live
+                    <ArrowUpRight className="h-2.5 w-2.5" />
+                  </div>
+                </div>
+              </motion.a>
+            ),
+          )}
         </motion.div>
       </div>
     </section>

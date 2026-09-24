@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { BASE_PATH, DOCTRINE, SITE } from "@/lib/constants";
+import { DOCTRINE, SITE } from "@/lib/constants";
 
-const DOCTRINE_URL = `${SITE.url}${BASE_PATH}/doctrine/`;
+const DOCTRINE_URL = `${SITE.url}/doctrine/`;
 const DOCTRINE_TITLE = "Doctrine | 300 Consulting";
 const DOCTRINE_DESCRIPTION =
-  "The five tenets 300 Consulting works by: Duty, Discipline, Craft, Restraint, Finish.";
+  "The four tenets 300 Consulting works by: Discipline, Craft, Restraint, Finish.";
 
 export const metadata: Metadata = {
   title: DOCTRINE_TITLE,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: DOCTRINE_URL,
     siteName: SITE.name,
     type: "article",
-    images: [`${SITE.url}${BASE_PATH}/og.png`],
+    images: [`${SITE.url}/og.png`],
   },
 };
 

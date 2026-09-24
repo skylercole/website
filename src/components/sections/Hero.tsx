@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -23,6 +24,17 @@ export default function Hero() {
         >
           25 years of it, from Helsinki.
         </motion.p>
+
+        <motion.a
+          href="#contact"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="group mt-8 inline-flex items-center gap-2 rounded-full border border-border-subtle px-5 py-2 font-heading text-sm text-text-primary transition-all duration-300 hover:border-text-primary/30 hover:bg-text-primary/[0.04]"
+        >
+          Discuss a project
+          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+        </motion.a>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
-import { BASE_PATH, SITE } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -17,11 +17,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const CANONICAL_HOME = `${SITE.url}${BASE_PATH}/`;
+const CANONICAL_HOME = `${SITE.url}/`;
 
-// Absolute URL is required: static export under basePath /portfolio means a
-// relative og path would resolve against the bare domain and miss /portfolio.
-const OG_IMAGE = `${SITE.url}${BASE_PATH}/og.png`;
+// Absolute URL so scrapers that ignore metadataBase still find the image.
+const OG_IMAGE = `${SITE.url}/og.png`;
 
 export const metadata: Metadata = {
   title: SITE.title,

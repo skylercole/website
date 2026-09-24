@@ -74,16 +74,16 @@ export default function CaseStudies() {
                 </p>
 
                 {/* Tech tags */}
-                <div className="mt-4 flex flex-wrap gap-2">
+                <ul className="mt-4 flex flex-wrap gap-2">
                   {study.tech.map((t) => (
-                    <span
+                    <li
                       key={t}
                       className="rounded-full border border-border-subtle bg-bg-base px-2.5 py-1 text-[11px] tracking-wide text-text-tertiary"
                     >
                       {t}
-                    </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </button>
 
               {/* Expanded details */}
