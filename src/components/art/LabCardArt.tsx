@@ -14,7 +14,7 @@ export default function LabCardArt({ project }: { project: LabProject }) {
       return (
         <div className="relative h-full overflow-hidden bg-[#f5efe3]">
           <img
-            src={`${base}/parallel-editions-hero.png`}
+            src={`${base}/parallel-editions-catalog.webp`}
             alt=""
             aria-hidden
             className="absolute inset-0 h-full w-full object-cover object-top opacity-40"
@@ -23,19 +23,19 @@ export default function LabCardArt({ project }: { project: LabProject }) {
           <div className="absolute inset-x-0 bottom-0 top-6 flex items-end justify-center pb-3">
             <div className="relative flex h-[72%] w-[88%] items-end justify-center">
               <img
-                src={`${base}/parallel-editions-sherlock.jpg`}
+                src={`${base}/parallel-editions-sherlock-fi.webp`}
                 alt=""
                 aria-hidden
                 className="absolute bottom-0 left-[4%] z-10 h-[78%] w-[30%] rotate-[-7deg] rounded-sm object-cover shadow-[0_8px_24px_rgba(80,40,20,0.28)] ring-1 ring-black/10 transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-[-9deg]"
               />
               <img
-                src={`${base}/parallel-editions-gatsby.webp`}
+                src={`${base}/parallel-editions-andersen-de.webp`}
                 alt=""
                 aria-hidden
                 className="relative z-20 h-[88%] w-[34%] rounded-sm object-cover shadow-[0_12px_32px_rgba(80,40,20,0.35)] ring-1 ring-black/10 transition-transform duration-500 group-hover:-translate-y-2"
               />
               <img
-                src={`${base}/parallel-editions-oz.jpg`}
+                src={`${base}/parallel-editions-wuthering-es.webp`}
                 alt=""
                 aria-hidden
                 className="absolute bottom-0 right-[4%] z-10 h-[78%] w-[30%] rotate-[7deg] rounded-sm object-cover shadow-[0_8px_24px_rgba(80,40,20,0.28)] ring-1 ring-black/10 transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-[9deg]"
@@ -55,7 +55,7 @@ export default function LabCardArt({ project }: { project: LabProject }) {
 
     case "belter-charts":
       return (
-        <div className="flex h-full items-center justify-center overflow-hidden bg-black p-1">
+        <div className="flex h-full items-center justify-center overflow-hidden bg-bg-surface">
           <img
             src={`${base}/belter-charts-hero.png`}
             alt=""
@@ -67,7 +67,7 @@ export default function LabCardArt({ project }: { project: LabProject }) {
 
     case "barline":
       return (
-        <div className="flex h-full items-center justify-center overflow-hidden bg-black p-1">
+        <div className="flex h-full items-center justify-center overflow-hidden bg-bg-surface">
           <img
             src={`${base}/barline-hero.png`}
             alt=""
