@@ -4,111 +4,105 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CASE_STUDIES } from "@/lib/constants";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
-import ScrollReveal from "@/components/ui/ScrollReveal";
 import { DIAGRAM_MAP } from "@/components/diagrams";
-import { ChevronRight, MapPin } from "lucide-react";
+import Section from "@/components/ui/Section";
+import SectionHeader from "@/components/ui/SectionHeader";
+import InlineList from "@/components/ui/InlineList";
+import { ChevronRight } from "lucide-react";
 
 export default function CaseStudies() {
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
 
   return (
-    <section id="case-studies" className="py-16 md:py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <ScrollReveal>
-          <div className="mb-10">
-            <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-5xl">
-              Selected work.
-            </h2>
-            <p className="mt-4 max-w-xl text-text-secondary">
-              Enterprise SaaS, aviation, logistics, IoT, and industrial tools.
-            </p>
-          </div>
-        </ScrollReveal>
+    <Section id="case-studies">
+      <SectionHeader
+        label="Selected work"
+        intro="Enterprise SaaS, aviation, logistics, IoT, and industrial tools."
+      />
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={staggerContainer}
-          className="grid gap-4 md:grid-cols-2"
-        >
-          {CASE_STUDIES.map((study, i) => {
-            const Diagram = study.diagram ? DIAGRAM_MAP[study.diagram] : null;
-            return (
-            <motion.div
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={staggerContainer}
+        className="grid gap-4 md:grid-cols-2"
+      >
+        {CASE_STUDIES.map((study, i) => {
+          const Diagram = study.diagram ? DIAGRAM_MAP[study.diagram] : null;
+          const expanded = expandedIdx === i;
+          const panelId = `case-study-${i}`;
+
+          return (
+            <motion.article
               key={study.client}
               variants={fadeInUp}
-              className="group relative overflow-hidden rounded-xl border border-border-subtle bg-bg-surface transition-colors duration-300 hover:border-border-hover"
+              className="group overflow-hidden rounded-box border border-border-subtle bg-bg-surface transition-colors duration-300 hover:border-border-strong"
             >
               {Diagram && (
                 <div className="relative aspect-[16/9] overflow-hidden border-b border-border-subtle bg-bg-raised/40">
                   <Diagram />
                 </div>
               )}
-              <button
-                onClick={() =>
-                  setExpandedIdx(expandedIdx === i ? null : i)
-                }
-                className="w-full p-8 text-left"
-              >
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="font-heading text-2xl font-semibold text-text-primary">
+
+              {/* The toggle lives in the heading; its ::after stretches over
+                  this block so the whole card body stays clickable. */}
+              <div className="relative p-6 md:p-8">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-heading text-h3 text-text-primary">
+                    <button
+                      type="button"
+                      onClick={() => setExpandedIdx(expanded ? null : i)}
+                      aria-expanded={expanded}
+                      aria-controls={expanded ? panelId : undefined}
+                      className="text-left after:absolute after:inset-0"
+                    >
                       {study.client}
-                    </h3>
-                    <div className="mt-1 flex items-center gap-1 text-xs text-text-tertiary">
-                      <MapPin className="h-3 w-3" />
-                      {study.location}
-                    </div>
-                  </div>
+                    </button>
+                  </h3>
                   <motion.div
-                    animate={{ rotate: expandedIdx === i ? 90 : 0 }}
+                    animate={{ rotate: expanded ? 90 : 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <ChevronRight className="h-5 w-5 text-text-tertiary transition-colors group-hover:text-text-primary" />
+                    <ChevronRight className="h-5 w-5 text-text-secondary transition-colors group-hover:text-text-primary" />
                   </motion.div>
                 </div>
 
-                <p className="mt-4 font-heading text-lg font-medium text-accent">
+                <p className="mt-1 text-meta text-text-secondary">
+                  {study.location}
+                </p>
+
+                <p className="mt-4 font-heading text-lead font-medium text-accent">
                   {study.outcome}
                 </p>
 
-                {/* Tech tags */}
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {study.tech.map((t) => (
-                    <li
-                      key={t}
-                      className="rounded-full border border-border-subtle bg-bg-base px-2.5 py-1 text-[11px] tracking-wide text-text-tertiary"
-                    >
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-              </button>
+                <InlineList
+                  items={study.tech}
+                  className="mt-4 text-meta text-text-secondary"
+                />
+              </div>
 
-              {/* Expanded details */}
               <AnimatePresence>
-                {expandedIdx === i && (
+                {expanded && (
                   <motion.div
+                    id={panelId}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="border-t border-border-subtle px-8 pb-8 pt-6">
-                      <p className="text-sm leading-relaxed text-text-secondary">
+                    <div className="border-t border-border-subtle px-6 py-6 md:px-8 md:pb-8">
+                      <p className="text-body text-text-secondary">
                         {study.description}
                       </p>
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
-            );
-          })}
-        </motion.div>
-      </div>
-    </section>
+            </motion.article>
+          );
+        })}
+      </motion.div>
+    </Section>
   );
 }

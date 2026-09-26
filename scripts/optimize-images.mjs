@@ -7,7 +7,7 @@
  *
  * Outputs:
  *   public/me.webp          avatar, 256px (rendered at 128px, 2× for retina)
- *   public/logo-mark.webp   helmet mark, 120px tall (navbar 42px / footer 30px)
+ *   public/logo-mark.webp   helmet mark in ink, 120px tall (navbar 42px / footer 30px)
  *   public/og.png           1200×630 social card for OpenGraph / Twitter
  *
  * Runs as the first step of `npm run build`. Safe to re-run; deterministic.
@@ -23,7 +23,9 @@ const out = (f) => resolve(__dirname, "../public", f);
 
 // Brand background (matches --bg-base in globals.css)
 const BG = { r: 233, g: 232, b: 228, alpha: 1 };
-const ACCENT = "#9c2b2b"; // --accent-emerald (red) from globals.css
+const ACCENT = "#9c2b2b"; // --accent (oxblood) in globals.css
+// Site ink (matches --text-primary in globals.css)
+const INK = { r: 24, g: 23, b: 26 };
 
 // 1. Avatar → compact WebP. 800×800 JPEG ~97KB → ~10KB.
 await sharp(brand("me.jpeg"))
@@ -32,9 +34,20 @@ await sharp(brand("me.jpeg"))
   .toFile(out("me.webp"));
 console.log("✓ public/me.webp");
 
-// 2. Helmet mark → WebP with alpha. 267×384 PNG ~142KB → ~10KB.
-await sharp(brand("logo-mark.png"))
+// 2. Helmet mark → ink WebP with alpha. 267×384 PNG ~142KB → ~10KB.
+//    The source is green; the site shows it in ink so the page keeps one
+//    foreground. Its alpha channel is the mask. brand/ and the OG card stay green.
+const { data: markAlpha, info: markInfo } = await sharp(brand("logo-mark.png"))
   .resize({ height: 120 })
+  .extractChannel("alpha")
+  .raw()
+  .toBuffer({ resolveWithObject: true });
+await sharp({
+  create: { width: markInfo.width, height: markInfo.height, channels: 3, background: INK },
+})
+  .joinChannel(markAlpha, {
+    raw: { width: markInfo.width, height: markInfo.height, channels: 1 },
+  })
   .webp({ quality: 90 })
   .toFile(out("logo-mark.webp"));
 console.log("✓ public/logo-mark.webp");
@@ -44,7 +57,7 @@ console.log("✓ public/logo-mark.webp");
 const OG_W = 1200;
 const OG_H = 630;
 
-// logo.png is 1426×624 (dark "300", green helmet) — best contrast on light bg.
+// logo.png is 1426×624 (dark "300", green helmet), best contrast on light bg.
 const logoW = 600;
 const logoMeta = await sharp(brand("logo.png")).metadata();
 const logoH = Math.round((logoW * logoMeta.height) / logoMeta.width);

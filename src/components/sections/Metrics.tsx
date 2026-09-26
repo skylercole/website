@@ -3,16 +3,17 @@
 import { motion } from "framer-motion";
 import { METRICS } from "@/lib/constants";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
+import Section from "@/components/ui/Section";
 
 export default function Metrics() {
   return (
-    <section className="border-y border-border-subtle py-12">
+    <Section variant="band" className="border-y border-border-subtle">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={staggerContainer}
-        className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 md:grid-cols-4"
+        className="grid grid-cols-2 gap-8 md:grid-cols-4"
       >
         {METRICS.map((metric) => (
           <motion.div
@@ -20,14 +21,14 @@ export default function Metrics() {
             variants={fadeInUp}
             className="text-center md:text-left"
           >
-            <div className="font-heading text-4xl font-semibold tabular-nums text-text-primary md:text-5xl">
+            <div className="font-heading text-h1 tabular-nums text-text-primary">
               {metric.value}
               {metric.suffix}
             </div>
-            <p className="mt-2 text-sm text-text-secondary">{metric.label}</p>
+            <p className="mt-2 text-meta text-text-secondary">{metric.label}</p>
           </motion.div>
         ))}
       </motion.div>
-    </section>
+    </Section>
   );
 }

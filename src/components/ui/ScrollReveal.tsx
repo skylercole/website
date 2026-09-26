@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import { type ReactNode } from "react";
+import { fadeIn } from "@/lib/animations";
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -10,18 +11,9 @@ interface ScrollRevealProps {
   delay?: number;
 }
 
-const defaultVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
-  },
-};
-
 export default function ScrollReveal({
   children,
-  variants = defaultVariants,
+  variants = fadeIn,
   className,
   delay = 0,
 }: ScrollRevealProps) {

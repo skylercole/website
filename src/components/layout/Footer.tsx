@@ -2,8 +2,8 @@ import { SITE } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border-subtle bg-bg-base px-6 py-8">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 md:flex-row">
+    <footer className="border-t border-border-subtle bg-bg-base py-8">
+      <div className="site-container flex flex-col items-center justify-between gap-4 md:flex-row">
         <div className="flex items-center gap-2">
           <img
             src="/logo-mark.webp"
@@ -14,13 +14,11 @@ export default function Footer() {
             decoding="async"
             className="h-[30px] w-auto opacity-50"
           />
-          <p className="font-heading text-sm text-text-tertiary">
+          <p className="font-heading text-meta text-text-secondary">
             &copy; 2020-2026 {SITE.name}. All rights reserved.
           </p>
         </div>
-        <p className="text-xs tracking-wide text-text-tertiary">
-          Helsinki, Finland
-        </p>
+        <p className="text-meta text-text-secondary">Helsinki, Finland</p>
       </div>
     </footer>
   );

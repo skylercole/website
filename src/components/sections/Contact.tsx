@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { fadeInUp } from "@/lib/animations";
+import { fadeIn, fadeInUp } from "@/lib/animations";
 import { SITE } from "@/lib/constants";
-import { Copy, Check, MapPin, Mail, ArrowUpRight } from "lucide-react";
-import ScrollReveal from "@/components/ui/ScrollReveal";
+import { Copy, Check, Mail, ArrowUpRight } from "lucide-react";
+import Section from "@/components/ui/Section";
+import SectionHeader from "@/components/ui/SectionHeader";
+import { buttonClass } from "@/components/ui/button";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -29,50 +31,46 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24">
-      <div className="mx-auto max-w-3xl px-6 text-center">
-        <ScrollReveal>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="mx-auto mb-8 h-28 w-28 overflow-hidden rounded-full border border-border-subtle bg-bg-surface shadow-[0_10px_30px_-14px_rgba(26,23,20,0.4)] md:h-32 md:w-32"
-          >
-            {/* Plain img avoids Next.js static-export basePath bug with unoptimized images */}
-            <img
-              src="/me.webp"
-              alt="Stanislav Stoyanov-Pitkänen"
-              width={128}
-              height={128}
-              loading="lazy"
-              decoding="async"
-              className="h-full w-full object-cover"
-            />
-          </motion.div>
-          <span className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-text-tertiary">
-            Contact
-          </span>
-          <h2 className="mt-4 font-heading text-4xl font-semibold tracking-tight md:text-6xl">
-            Get in touch.
-          </h2>
-          <p className="mx-auto mt-6 max-w-lg text-lg text-text-secondary">
-            Send the short version. I&apos;ll tell you where I can help.
-          </p>
-        </ScrollReveal>
+    <Section id="contact">
+      <SectionHeader label="Contact" />
 
-        {/* Two actions, then the address with copy */}
+      <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-start">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeIn}
+          className="order-first size-24 overflow-hidden rounded-box border border-border-subtle bg-bg-surface md:order-last md:size-32"
+        >
+          {/* Plain img avoids Next.js static-export basePath bug with unoptimized images */}
+          <img
+            src="/me.webp"
+            alt="Stanislav Stoyanov-Pitkänen"
+            width={128}
+            height={128}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
+        </motion.div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="mt-10"
+          className="max-w-2xl"
         >
-          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <p className="font-heading text-h1">Get in touch.</p>
+          <p className="mt-4 text-lead text-text-secondary">
+            Send the short version. I&apos;ll tell you where I can help.
+          </p>
+
+          {/* Two actions, then the address with copy */}
+          <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row">
             <a
               href={`mailto:${SITE.email}`}
-              className="inline-flex items-center gap-2 rounded-full border border-text-primary bg-text-primary px-6 py-3 font-heading text-base text-bg-base transition-colors duration-300 hover:bg-text-primary/85"
+              className={buttonClass("solid", "lg")}
             >
               <Mail className="h-4 w-4" />
               Email Stanislav
@@ -81,76 +79,55 @@ export default function Contact() {
               href={SITE.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border-subtle px-6 py-3 font-heading text-base text-text-primary transition-all duration-300 hover:border-text-primary/30 hover:bg-text-primary/[0.04]"
+              className={buttonClass("outline", "lg")}
             >
               Message on LinkedIn
-              <ArrowUpRight className="h-4 w-4 text-text-tertiary" />
+              <ArrowUpRight className="h-4 w-4 text-text-secondary" />
             </a>
           </div>
 
           <button
             onClick={handleCopy}
-            className="group mt-6 inline-flex items-center gap-2 text-sm text-text-secondary transition-colors duration-300 hover:text-text-primary"
+            className="group mt-6 inline-flex items-center gap-2 text-meta text-text-secondary transition-colors duration-300 hover:text-text-primary"
           >
             <span>{SITE.email}</span>
             {copied ? (
-              <Check className="h-3.5 w-3.5 text-accent" />
+              <Check className="h-3.5 w-3.5 text-text-primary" />
             ) : (
-              <Copy className="h-3.5 w-3.5 text-text-tertiary transition-colors group-hover:text-text-primary" />
+              <Copy className="h-3.5 w-3.5 text-text-secondary transition-colors group-hover:text-text-primary" />
             )}
           </button>
           {copied && (
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="mt-2 text-xs text-accent"
+              className="mt-2 text-meta text-text-primary"
             >
               Copied.
             </motion.p>
           )}
-        </motion.div>
 
-        {/* Social links + location */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="mt-10 flex flex-col items-center gap-6"
-        >
-          <div className="flex gap-4">
-            <a
-              href={SITE.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-border-subtle bg-bg-surface text-text-secondary transition-colors duration-300 hover:border-border-hover hover:text-text-primary"
-              aria-label="LinkedIn"
-            >
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
+          <p className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-1 text-meta text-text-secondary">
+            <span>{SITE.location}</span>
+            <span aria-hidden className="text-border-strong">
+              ·
+            </span>
+            <span>Remote work across time zones.</span>
+            <span aria-hidden className="text-border-strong">
+              ·
+            </span>
             <a
               href={SITE.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-border-subtle bg-bg-surface text-text-secondary transition-colors duration-300 hover:border-border-hover hover:text-text-primary"
-              aria-label="GitHub"
+              className="inline-flex items-center gap-1 underline decoration-border-strong underline-offset-2 transition-colors hover:text-text-primary hover:decoration-text-primary"
             >
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-              </svg>
+              GitHub
+              <ArrowUpRight className="h-3 w-3" />
             </a>
-          </div>
-
-          <div className="flex items-center gap-2 text-sm text-text-tertiary">
-            <MapPin className="h-4 w-4" />
-            <span>{SITE.location}</span>
-            <span className="text-border-subtle">·</span>
-            <span>Remote work across time zones.</span>
-          </div>
+          </p>
         </motion.div>
       </div>
-    </section>
+    </Section>
   );
 }

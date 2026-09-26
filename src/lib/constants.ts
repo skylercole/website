@@ -11,10 +11,10 @@ export const SITE = {
 };
 
 export const METRICS = [
-  { prefix: "/01", value: 25, suffix: "+", label: "Years of Engineering" },
-  { prefix: "/02", value: 15, suffix: "+", label: "Enterprise Clients" },
-  { prefix: "/03", value: 50, suffix: "+", label: "Microservices Migrated" },
-  { prefix: "/04", value: 3, suffix: "", label: "Fortune 100 Companies" },
+  { value: 25, suffix: "+", label: "Years of Engineering" },
+  { value: 15, suffix: "+", label: "Enterprise Clients" },
+  { value: 50, suffix: "+", label: "Microservices Migrated" },
+  { value: 3, suffix: "", label: "Fortune 100 Companies" },
 ];
 
 export const CAPABILITIES = {
@@ -23,20 +23,17 @@ export const CAPABILITIES = {
       title: "Architecture & complex systems",
       description: "Architecture that can become code.",
       detail: ["Solution design", "Distributed systems", "50+ microservices"],
-      icon: "PenTool",
     },
     {
       title: "Cloud & modernization",
       description:
         "Cloud migrations that ship without downtime. Older systems moved forward without losing the business logic.",
       detail: ["Azure", "AWS", "Kubernetes", "Terraform"],
-      icon: "Cloud",
     },
     {
       title: "Hands-on engineering",
       description: "One person accountable from design to release.",
       detail: ["Back end", "Front end", "CI/CD"],
-      icon: "Layers",
     },
   ],
   supporting: [
@@ -88,7 +85,6 @@ export const CASE_STUDIES = [
   //   description:
   //     "Designed and implemented a cross-language project scaffolding solution in .NET to unify development practices across the energy infrastructure sector. Built a best-practices framework and CLI tooling to support cell-based microservices architecture.",
   //   tech: [".NET", "Python", "Java", "Azure DevOps", "Backstage"],
-  //   gradient: "from-emerald-900/40 to-emerald-950/20",
   // },
   {
     client: "Relex Solutions",
@@ -97,7 +93,6 @@ export const CASE_STUDIES = [
     description:
       "Developed distributed enterprise applications and moved 50+ microservices from AWS to Azure and Kubernetes.",
     tech: [".NET", "Azure", "AWS", "Kubernetes", "Kafka", "Terraform"],
-    gradient: "from-[#10b98118] via-[#0c0c0c00] to-[#10b98108]",
     diagram: "relex-migration",
   },
   {
@@ -107,7 +102,6 @@ export const CASE_STUDIES = [
     description:
       "Led the interface layer for Intelligent Asset Management and remote/autonomous shipping. The work tied together sensor data, AI object detection, and video streams.",
     tech: ["C++", "Unity", "gRPC", "LiDAR", "AI"],
-    gradient: "from-[#0d2318] via-[#0c0c0c00] to-[#161616]",
     diagram: "rolls-royce-sensors",
   },
   {
@@ -118,7 +112,6 @@ export const CASE_STUDIES = [
     description:
       "Built an IoT dashboard for AGVs with live telemetry and predictive maintenance. Faults appeared early enough to plan service before downtime.",
     tech: [".NET", "Azure", "Azure ML", "CosmosDB", "IoT"],
-    gradient: "from-[#1a1a2a] via-[#0c0c0c00] to-[#0d2318]",
     diagram: "rocla-iot",
   },
   {
@@ -128,7 +121,6 @@ export const CASE_STUDIES = [
     description:
       "Developed lifecycle tracking for wood-based buildings, from production to IoT performance monitoring. Also built IoT software for consumer goods, covering production, logistics, use, and recycling.",
     tech: ["React", ".NET", "IoT", "Azure"],
-    gradient: "from-[#10b98112] via-[#161616] to-[#1e1e2e]",
     diagram: "stora-enso-lifecycle",
   },
   {
@@ -139,7 +131,6 @@ export const CASE_STUDIES = [
     description:
       "Built near real-time analytics for airport ground handling, with large data flows made usable for day-to-day operations.",
     tech: [".NET", "Azure", "Databricks", "Kubernetes", "Terraform"],
-    gradient: "from-[#1e1e2e] via-[#0c0c0c00] to-[#10b98108]",
   },
   {
     client: "Palkkaus.fi",
@@ -148,7 +139,6 @@ export const CASE_STUDIES = [
     description:
       "Developed API integrations for accounting and payments, keeping financial data moving between the platform and external systems.",
     tech: [".NET", "Angular"],
-    gradient: "from-[#161616] via-[#0d2318] to-[#0c0c0c00]",
   },
   {
     client: "Kone",
@@ -157,7 +147,6 @@ export const CASE_STUDIES = [
     description:
       "Built a domain-specific HTML VR browser for Microsoft HoloLens, used to view elevator and building solutions in 3D.",
     tech: [".NET", "Unity"],
-    gradient: "from-[#1e1e2e] via-[#0c0c0c00] to-[#0d1f15]",
   },
   {
     client: "ABB",
@@ -166,7 +155,6 @@ export const CASE_STUDIES = [
     description:
       "Developer work for ABB Drive Composer, the PC tool used to commission and maintain ABB drives.",
     tech: [".NET"],
-    gradient: "from-[#0d2318] via-[#161616] to-[#1a1a2a]",
   },
 ];
 
@@ -182,29 +170,6 @@ export const CLIENT_LOGOS = [
   "Thermo Fisher",
   "ThoughtWorks",
   "Palkkaus.fi"
-];
-
-export const PROCESS_STEPS = [
-  {
-    number: "/01",
-    title: "Discovery",
-    description: "Define the problem worth solving.",
-  },
-  {
-    number: "/02",
-    title: "Architecture",
-    description: "A plan detailed enough to build from.",
-  },
-  {
-    number: "/03",
-    title: "Build",
-    description: "Incremental delivery. Working software every sprint.",
-  },
-  {
-    number: "/04",
-    title: "Handoff",
-    description: "Docs, knowledge, and a system your team owns.",
-  },
 ];
 
 export const DOCTRINE = [
@@ -244,7 +209,6 @@ export type LabProject = {
   name: string;
   tagline: string;
   url: string;
-  accent: string;
   stats?: string[];
   featured?: boolean;
 };
@@ -255,37 +219,34 @@ export const LABS: LabProject[] = [
     name: "Parallel Editions",
     tagline: "Bilingual classics on Kindle, side-by-side.",
     url: "https://parallel.pub",
-    accent: "#b04020",
     stats: ["100+ classics", "13+ languages", "970+ editions"],
     featured: true,
   },
   {
     id: "playable-me",
     name: "PlayableMe",
-    tagline: "Recreate yourself in the games you play.",
+    tagline:
+      "Upload a photo and get the character-creator settings for your face. It maps an ArcFace-type face embedding to each game's sliders with a linear fit.",
     url: "https://playableme.com",
-    accent: "#7c6cff",
   },
   {
     id: "belter-charts",
     name: "Belter Charts",
     tagline: "Unofficial Expanse navigator, loved by the Reddit community.",
     url: "https://belter-charts.pages.dev",
-    accent: "#6ee7b7",
   },
   {
     id: "barline",
     name: "Barline",
-    tagline: "Barbell form analysis from a phone camera.",
+    tagline:
+      "Barbell form analysis from a phone video. Pose tracking is MediaPipe, running in the browser.",
     url: "https://barline.web.app",
-    accent: "#22d3ee",
   },
   {
     id: "callvaders",
     name: "CallVaders",
     tagline: "A fun weekend project using MediaPipe, turning your video call into a Space Invaders - type game.",
     url: "https://callvaders.web.app",
-    accent: "#3b8d6a",
   },
 ];
 
