@@ -219,7 +219,7 @@ export const LABS: LabProject[] = [
     name: "Parallel Editions",
     tagline: "Bilingual classics on Kindle, side-by-side.",
     url: "https://parallel.pub",
-    stats: ["100+ classics", "13+ languages", "970+ editions"],
+    stats: ["21 classics", "13 languages", "210 editions"],
     featured: true,
   },
   {
