@@ -124,15 +124,6 @@ export const CASE_STUDIES = [
     diagram: "stora-enso-lifecycle",
   },
   {
-    client: "Airpro / Finavia",
-    location: "Finland",
-    outcome:
-      "Near real-time analytics for Finland's airport ground handling, used in daily operational decisions.",
-    description:
-      "Built near real-time analytics for airport ground handling, with large data flows made usable for day-to-day operations.",
-    tech: [".NET", "Azure", "Databricks", "Kubernetes", "Terraform"],
-  },
-  {
     client: "Palkkaus.fi",
     location: "Finland",
     outcome: "API integration systems for accounting and payments.",
@@ -160,7 +151,6 @@ export const CASE_STUDIES = [
 
 export const CLIENT_LOGOS = [
   "Relex Solutions",
-  "Airpro / Finavia",
   "Rolls-Royce Marine",
   "Rocla / Mitsubishi Electric",
   "Stora Enso",

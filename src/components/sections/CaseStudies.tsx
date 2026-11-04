@@ -17,7 +17,7 @@ export default function CaseStudies() {
     <Section id="case-studies">
       <SectionHeader
         label="Selected work"
-        intro="Enterprise SaaS, aviation, logistics, IoT, and industrial tools."
+        intro="Enterprise SaaS, logistics, IoT, and industrial tools."
       />
 
       <motion.div
