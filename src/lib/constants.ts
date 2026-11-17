@@ -2,7 +2,7 @@ export const SITE = {
   name: "300 Consulting",
   title: "300 Consulting | Solution Architecture & Cloud Engineering",
   description:
-    "Solution architecture and cloud engineering from Helsinki. 25+ years building systems that stay useful.",
+    "Solution architecture and cloud engineering from Helsinki. 25+ years of building production systems.",
   url: "https://300consulting.fi",
   email: "stanislav.sp@300consulting.fi",
   linkedin: "https://www.linkedin.com/in/stanislav-sp/",
@@ -21,13 +21,13 @@ export const CAPABILITIES = {
   primary: [
     {
       title: "Architecture & complex systems",
-      description: "Architecture that can become code.",
+      description: "Designs detailed enough to build from.",
       detail: ["Solution design", "Distributed systems", "50+ microservices"],
     },
     {
       title: "Cloud & modernization",
       description:
-        "Cloud migrations that ship without downtime. Older systems moved forward without losing the business logic.",
+        "Cloud migrations that ship without downtime. Older systems are rewritten with their business logic intact.",
       detail: ["Azure", "AWS", "Kubernetes", "Terraform"],
     },
     {
@@ -89,7 +89,7 @@ export const CASE_STUDIES = [
   {
     client: "Relex Solutions",
     location: "Finland",
-    outcome: "Migrated 50+ microservices from AWS to Azure. Zero downtime.",
+    outcome: "Migrated 50+ microservices from AWS to Azure with zero downtime.",
     description:
       "Developed distributed enterprise applications and moved 50+ microservices from AWS to Azure and Kubernetes.",
     tech: [".NET", "Azure", "AWS", "Kubernetes", "Kafka", "Terraform"],
@@ -108,7 +108,7 @@ export const CASE_STUDIES = [
     client: "Rocla / Mitsubishi",
     location: "Finland",
     outcome:
-      "Predictive maintenance for an AGV fleet. Faults caught before downtime, service needs turned into sales leads.",
+      "Predictive maintenance for an AGV fleet. Faults were caught before downtime, and service needs became sales leads.",
     description:
       "Built an IoT dashboard for AGVs with live telemetry and predictive maintenance. Faults appeared early enough to plan service before downtime.",
     tech: [".NET", "Azure", "Azure ML", "CosmosDB", "IoT"],
@@ -128,7 +128,7 @@ export const CASE_STUDIES = [
     location: "Finland",
     outcome: "API integration systems for accounting and payments.",
     description:
-      "Developed API integrations for accounting and payments, keeping financial data moving between the platform and external systems.",
+      "Developed API integrations that move accounting and payment data between the platform and external systems.",
     tech: [".NET", "Angular"],
   },
   {
@@ -200,30 +200,36 @@ export type LabProject = {
   tagline: string;
   url: string;
   stats?: string[];
-  featured?: boolean;
 };
 
 export const LABS: LabProject[] = [
+  {
+    id: "belter-charts",
+    name: "Belter Charts",
+    tagline:
+      "Unofficial navigator for The Expanse's solar system. Planet positions come from JPL Horizons data.",
+    url: "https://beltercharts.com",
+  },
+  {
+    id: "playable-me",
+    name: "PlayableMe",
+    tagline:
+      "Character-creator settings from a photo of a face. A linear fit maps an ArcFace-type face embedding to each game's sliders.",
+    url: "https://playableme.com",
+  },
   {
     id: "parallel-editions",
     name: "Parallel Editions",
     tagline: "Bilingual classics on Kindle, side-by-side.",
     url: "https://parallel.pub",
     stats: ["21 classics", "13 languages", "210 editions"],
-    featured: true,
   },
   {
-    id: "playable-me",
-    name: "PlayableMe",
+    id: "kotijarvi",
+    name: "Kotijärvi",
     tagline:
-      "Upload a photo and get the character-creator settings for your face. It maps an ArcFace-type face embedding to each game's sliders with a linear fit.",
-    url: "https://playableme.com",
-  },
-  {
-    id: "belter-charts",
-    name: "Belter Charts",
-    tagline: "Unofficial Expanse navigator, loved by the Reddit community.",
-    url: "https://belter-charts.pages.dev",
+      "Print-ready lake depth maps, centered on the buyer's cottage or jetty. A Python pipeline draws each map from Finland's open depth and terrain data.",
+    url: "https://kotijarvi.fi",
   },
   {
     id: "barline",
@@ -231,12 +237,6 @@ export const LABS: LabProject[] = [
     tagline:
       "Barbell form analysis from a phone video. Pose tracking is MediaPipe, running in the browser.",
     url: "https://barline.web.app",
-  },
-  {
-    id: "callvaders",
-    name: "CallVaders",
-    tagline: "A fun weekend project using MediaPipe, turning your video call into a Space Invaders - type game.",
-    url: "https://callvaders.web.app",
   },
 ];
 

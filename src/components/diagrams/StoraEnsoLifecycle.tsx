@@ -70,7 +70,7 @@ export default function StoraEnsoLifecycle() {
         wood-based buildings · IoT monitoring · consumer packaging
       </text>
       <text x="18" y="216" fontFamily="Inter, sans-serif" fontSize="8" className="fill-text-secondary" letterSpacing="0.6">
-        every stage measured
+        measured at each stage
       </text>
     </svg>
   );

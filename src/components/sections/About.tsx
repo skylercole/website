@@ -36,16 +36,16 @@ export default function About() {
           className="space-y-6"
         >
           <p className="text-lead text-text-secondary">
-            300 Consulting is a one-person firm. One point of contact, from
-            first conversation to production.
+            300 Consulting is a one-person firm. The same person handles the
+            work from the first conversation to production.
           </p>
           <p className="text-lead text-text-secondary">
             The clients range from early-stage companies to global enterprises.
           </p>
 
           <p className="text-lead text-text-secondary">
-            When your project needs more hands, you can bring in trusted people
-             300 Consulting has worked with before, including{" "}
+            When a project needs more hands, trusted people 300 Consulting has
+            worked with before can join, including{" "}
             <a
               href="http://eladaus.com/"
               target="_blank"

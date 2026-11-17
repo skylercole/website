@@ -42,6 +42,14 @@ export default function LabCardArt({ project }: { project: LabProject }) {
               />
             </div>
           </div>
+          {/* The catalog's figures, on a plate over the artwork. Each figure
+              stays with its word, so a narrow card breaks the line between
+              figures. */}
+          {project.stats && (
+            <p className="absolute left-2 top-2 z-30 max-w-[calc(100%-1rem)] rounded-sm bg-[#18171a]/85 px-1.5 py-0.5 text-[9px] leading-[1.5] text-white/90 sm:text-[10px]">
+              {project.stats.map((stat) => stat.replace(/ /g, "\u00a0")).join("\u00a0· ")}
+            </p>
+          )}
         </div>
       );
 
@@ -55,12 +63,24 @@ export default function LabCardArt({ project }: { project: LabProject }) {
 
     case "belter-charts":
       return (
-        <div className="flex h-full items-center justify-center overflow-hidden bg-bg-surface">
+        <div className="h-full overflow-hidden bg-black">
           <img
-            src={`${base}/belter-charts-hero.png`}
+            src={`${base}/belter-charts-hero.webp`}
             alt=""
             aria-hidden
-            className="h-full w-full object-contain transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-[1.02]"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        </div>
+      );
+
+    case "kotijarvi":
+      return (
+        <div className="h-full overflow-hidden bg-[#f3eee4]">
+          <img
+            src={`${base}/kotijarvi-map.webp`}
+            alt=""
+            aria-hidden
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
         </div>
       );
@@ -73,18 +93,6 @@ export default function LabCardArt({ project }: { project: LabProject }) {
             alt=""
             aria-hidden
             className="h-full w-full object-contain transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-[1.02]"
-          />
-        </div>
-      );
-
-    case "callvaders":
-      return (
-        <div className="flex h-full items-center justify-center overflow-hidden bg-[#0b0d1a] p-1">
-          <img
-            src={`${base}/callvaders-hero.webp`}
-            alt=""
-            aria-hidden
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-[1.02]"
           />
         </div>
       );
