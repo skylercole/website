@@ -11,21 +11,6 @@ import { ArrowUpRight } from "lucide-react";
 const CARD =
   "group relative flex flex-col overflow-hidden rounded-box border border-border-subtle bg-bg-surface transition-colors duration-300 hover:border-border-strong";
 
-// The grid has six columns from 640px up. Cards sit three to a row; when the
-// count is not a multiple of three, it opens with rows of two wider cards, so
-// the last row is always full. Five cards make a row of two and a row of three.
-const WIDE_CARDS = [0, 4, 2][LABS.length % 3];
-
-// On a phone the cards pair up, and with an odd count the first one takes the
-// full width.
-const LEAD_ON_PHONE = LABS.length % 2 === 1;
-
-function span(index: number) {
-  const phone = LEAD_ON_PHONE && index === 0 ? "col-span-2" : "";
-  const wide = index < WIDE_CARDS ? "sm:col-span-3" : "sm:col-span-2";
-  return `${phone} ${wide}`.trim();
-}
-
 export default function Labs() {
   return (
     <Section id="labs">
@@ -39,16 +24,16 @@ export default function Labs() {
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={staggerContainer}
-        className="grid grid-cols-2 gap-3 sm:grid-cols-6 md:gap-4"
+        className="grid grid-cols-2 gap-3 md:gap-4"
       >
-        {LABS.map((project, index) => (
+        {LABS.map((project) => (
           <motion.a
             key={project.id}
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
             variants={fadeInUp}
-            className={`${CARD} ${span(index)}`}
+            className={CARD}
           >
             <div className="relative aspect-[4/3] overflow-hidden border-b border-border-subtle">
               <LabCardArt project={project} />

@@ -238,6 +238,13 @@ export const LABS: LabProject[] = [
       "Barbell form analysis from a phone video. Pose tracking is MediaPipe, running in the browser.",
     url: "https://barline.web.app",
   },
+  {
+    id: "callvaders",
+    name: "CallVaders",
+    tagline:
+      "A Space Invaders-style game where the faces from a video call are the invaders. MediaPipe's BlazeFace model finds them in a shared Teams or Zoom window.",
+    url: "https://callvaders.web.app",
+  },
 ];
 
 export const PATRONAGE = {

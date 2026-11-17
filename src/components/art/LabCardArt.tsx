@@ -97,6 +97,18 @@ export default function LabCardArt({ project }: { project: LabProject }) {
         </div>
       );
 
+    case "callvaders":
+      return (
+        <div className="h-full overflow-hidden bg-[#0b0d1a]">
+          <img
+            src={`${base}/callvaders-hero.webp`}
+            alt=""
+            aria-hidden
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        </div>
+      );
+
     default:
       return null;
   }
